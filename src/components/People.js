@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {ListGroup} from 'react-bootstrap'
 // import PeopleInput from './PeopleInput'
 
 class People extends Component {
@@ -12,7 +13,7 @@ class People extends Component {
   }
   handleSubmit (e) {
     e.preventDefault()
-    console.log(this.state.value)
+    this.props.onSubmit(this.state.value, 'people')
     this.setState({
       value: ''
     })
@@ -22,8 +23,8 @@ class People extends Component {
     this.setState({
       value: e.target.value
     })
-
   }
+
   render () {
     return (
       <div>
@@ -31,6 +32,15 @@ class People extends Component {
         <form onSubmit={this.handleSubmit}>
           <input id='people' type='text' onChange={this.handleChange} value={this.state.value} />
         </form>
+        <div>
+          <ListGroup componentClass='ul'>
+            {
+              this.props.people.map((item, i) => (
+                <div>{item}</div>
+              ))
+            }
+          </ListGroup>
+        </div>
       </div>
     )
   }
