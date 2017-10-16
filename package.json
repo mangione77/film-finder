@@ -4,7 +4,11 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+<<<<<<< HEAD
     "rc-slider": "^8.3.1",
+=======
+    "bootstrap": "^3.3.7",
+>>>>>>> d7a2938ab84e76d2ef7c177092650d99c46ee2ae
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",

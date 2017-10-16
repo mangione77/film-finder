@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Sliderbar from './Slider'
+import Age from './Age'
 
 class App extends Component {
   render () {
