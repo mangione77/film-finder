@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import People from './People'
+import Sliderbar from './Slider'
+import Age from './Age'
+
 class App extends Component {
   constructor () {
     super()
@@ -19,6 +22,7 @@ class App extends Component {
   render () {
     return (
       <People onSubmit={this.getValuePeople} people={this.state.people} />
+        <Sliderbar />
     )
   }
 }
