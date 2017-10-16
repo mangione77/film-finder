@@ -21,8 +21,10 @@ class App extends Component {
 
   render () {
     return (
+      <div>
       <People onSubmit={this.getValuePeople} people={this.state.people} />
         <Sliderbar />
+      </div>
     )
   }
 }
