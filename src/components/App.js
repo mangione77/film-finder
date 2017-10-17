@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {Sliderbar} from './Sliderbar'
 import People from './People'
 import Age from './Age'
+import Genres from './Genres'
+import { Main } from './Main'
 import {ResetButton} from './ResetButton'
 import {sendData} from './api'
 
@@ -10,7 +12,7 @@ class App extends Component {
     super()
 
     const newDate = new Date()
-    this.currentYear = newDate.getFullYear()  
+    this.currentYear = newDate.getFullYear()
     this.state = {
       people: [],
       genres: [],
@@ -19,6 +21,7 @@ class App extends Component {
       ajaxData: []
     }
     this.getValuePeople = this.getValuePeople.bind(this)
+    this.getGenresValue = this.getGenresValue.bind(this)
     this.getAgeValue = this.getAgeValue.bind(this)
     this.getReset = this.getReset.bind(this)
     this.getValueSliderBar = this.getValueSliderBar.bind(this)
@@ -44,8 +47,20 @@ class App extends Component {
       people: newArray
     })
   }
-  componentDidUpdate () {
-    console.log(this.state.age)
+
+  getGenresValue (value) {
+    this.setState({
+      genres: value
+    })
+  }
+  getReset () {
+    this.setState({
+      people: [],
+      genres: [],
+      age: 21,
+      date: [1895, this.currentYear]
+    })
+    console.log(this.state)
   }
 
   /* GET DATA AJAX */
@@ -56,7 +71,8 @@ class App extends Component {
         ajaxData: data.data.results
       })
     })
-  } 
+  }
+
   /* COMPONENT METHODS */
   componentWillMount () {
     this.getAjaxData()
@@ -68,25 +84,9 @@ class App extends Component {
     })
   }
 
-  getAgeValue (value) {
-    this.setState({
-      age: value
-    })
-  }
-
-  getReset () {
-    this.setState({
-      people: [],
-      genres: [],
-      age: 21,
-      date: [1895, this.currentYear]
-    })
-    console.log(this.state)
-  }
-
   componentDidUpdate () {
+    console.log(this.state.age)
     console.log(this.state.date)
-
   }
 
   render () {
@@ -100,6 +100,9 @@ class App extends Component {
         <Age age={this.state.age} onAgeClick={this.getAgeValue} />
         <Sliderbar dataValue={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]} />
         <ResetButton foo={this.getReset} />
+        <Genres onGenreClick={this.getGenresValue} />
+        <Main />
+          results={this.state.ajaxData} />
       </div>
     )
   }
