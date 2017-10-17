@@ -93,40 +93,24 @@ class App extends Component {
   }
 
   render () {
-<<<<<<< HEAD
     return (
-      <div>
-        <People
-          onSubmit={this.getValuePeople}
-          people={this.state.people}
-          onDelete={this.deleteValuePeople}
-        />
-        <Age age={this.state.age} onAgeClick={this.getAgeValue} />
-        <Sliderbar dataValue={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]} />
-        <ResetButton foo={this.getReset} />
-        <Genres onGenreClick={this.getGenresValue} />
-        <Main
-          results={this.state.ajaxData} />
-      </div>
-    )
-=======
-    return(<Grid>
+      <Grid>
         <Row>
-        <Col xs={6} md={4}>
-          <Sidebar 
-          people={this.state.people} onSubmit={this.getValuePeople} onDelete={this.deleteValuePeople}
-          age={this.state.age} onAgeClick={this.getAgeValue}
-          onGenreClick={this.getGenresValue}
-          data={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]}
-          resetData={this.getReset}
-          />
-        </Col>
-        <Col xs={6} md={8}>
-          <Main />
-        </Col>    
-        </Row>  
-        </Grid>)
->>>>>>> 82a9ef80c87b5cdc103b9d7760e97cdc649b0561
+          <Col xs={6} md={4}>
+            <Sidebar
+              people={this.state.people} onSubmit={this.getValuePeople} onDelete={this.deleteValuePeople}
+              age={this.state.age} onAgeClick={this.getAgeValue}
+              onGenreClick={this.getGenresValue}
+              data={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]}
+              resetData={this.getReset}
+            />
+          </Col>
+          <Col xs={6} md={8}>
+            <Main />
+          </Col>
+        </Row>
+      </Grid>
+    )
   }
 }
 
