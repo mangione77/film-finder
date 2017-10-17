@@ -3,6 +3,7 @@ import {Sliderbar} from './Sliderbar'
 import People from './People'
 import Age from './Age'
 import Genres from './Genres'
+import { Main } from './Main'
 import {ResetButton} from './ResetButton'
 import {sendData} from './api'
 
@@ -98,6 +99,8 @@ class App extends Component {
         <Age age={this.state.age} onAgeClick={this.getAgeValue} />
         <Sliderbar />
       <Genres onGenreClick={this.getGenresValue} />
+      <Main 
+        results={this.state.ajaxData} />
       </div>
     )
   }
