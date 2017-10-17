@@ -22,18 +22,26 @@ function generateUrl (state) {
   }
 
   /* AGE */
-  if (state.age !== 21) {
-    
-  }
+    baseUrl += `&certification_country=US&certification.lte=${state.age}`
+    /*
+      NR: NO INFO
+      G: ALL AGES
+      PG: 10
+      PG-13: 13
+      R: 21
+      NC-17: SEXO, DROGAS & ROCK
+
+    */
+
   /* DATE */
   if (state.date[0] !== state.date[1]) {
-    baseUrl += `?primary_release_date.gte=${state.date[0]}-01-01&primary_release_date.lte=${state.date[1]}-12-31`
+    baseUrl += `&primary_release_date.gte=${state.date[0]}-01-01&primary_release_date.lte=${state.date[1]}-12-31`
   } else {
-    baseUrl += `?primary_release_year=${state.date[1]}`
+    baseUrl += `&primary_release_year=${state.date[1]}`
   }
-  
+
   /* CATEGORY */
-  baseUrl += '?api_key=%%APIKEY%%'
+  baseUrl += '&api_key=%%APIKEY%%'
   console.log(baseUrl)
   return baseUrl.replace('%%APIKEY%%', apiKey)
 }
