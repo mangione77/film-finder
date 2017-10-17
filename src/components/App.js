@@ -19,7 +19,7 @@ class App extends Component {
     const newDate = new Date()
     this.currentYear = newDate.getFullYear()
     this.state = {
-      people: ['Brad Pitt', 'Angelina Jolie'],
+      people: ['Braasdasdasduahidsd Pitt', 'Angelina Jolie'],
       genres: [28, 35],
       age: '',
       date: [1895, this.currentYear],

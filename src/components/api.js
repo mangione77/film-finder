@@ -9,27 +9,36 @@ export function sendData (state) {
 }
 
 function generateUrl (state) {
-  console.log(state)
+  // console.log(state)
   let url = discoverUrl
+
   /* PEOPLE */
   if (state.people.length) {
+    let count = 0
     url += 'with_people='
-    state.people.forEach((person, i) => {
-      url += (i ? ',' : '') + getPersonId(person)
+
+    const aId = state.people.map(person => getPersonId(person))
+
+    Promise.all(aId).then(data => {
+      data.forEach((data, i) => {
+        let personId
+        if (data.data.results.length) {
+          personId = data.data.results[0].id
+          console.log(data.data.results[0].id)
+        }
+
+        if (personId !== undefined) {
+          url += ((i - count) ? ',' : '') + personId
+        } else {
+          count++
+        }
+      })
     })
+
     url += '&'
   }
 
   /* AGE */
-  /*
-    NR: NO INFO
-    G: ALL AGES
-    PG: 10
-    PG-13: 13
-    R: 21
-    NC-17: SEXO, DROGAS & ROCK
-
-  */
   url += `certification_country=US&certification.lte=${state.age}`
 
   /* DATE */
@@ -52,14 +61,20 @@ function generateUrl (state) {
 
   /* PAGE */
   url += `&page=${state.page}`
-  url += '&api_key=%%APIKEY%%'
+
+  /* API KEY */
+  url += addApiKey()
+  
   console.log(url)
-  return url.replace('%%APIKEY%%', apiKey)
+  return url
 }
 
 function getPersonId (person) {
   person = person.trim().replace(' ', '%20')
-  var urlPersonId = peopleUrl + `&query=${person}`
-  console.log(urlPersonId)
-  return 16
+  var urlPersonId = peopleUrl + `&query=${person}` + addApiKey()
+  return axios.get(urlPersonId)
+}
+
+function addApiKey () {
+  return `&api_key=${apiKey}`
 }
