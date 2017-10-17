@@ -3,6 +3,7 @@ import {Sliderbar} from './Sliderbar'
 import People from './People'
 import Age from './Age'
 import Genres from './Genres'
+import { Main } from './Main'
 import {ResetButton} from './ResetButton'
 import {sendData} from './api'
 
@@ -15,7 +16,7 @@ class App extends Component {
     this.state = {
       people: ['brasdadasd', 'asdadasdad', 'adasdadsadsa'],
       genres: ['dsasdasd', 'asdadasd', 'asdadasdasd'],
-      age: 0,
+      age: '',
       date: [1895, this.currentYear],
       sort: 'popularity',
       ajaxData: []
@@ -87,7 +88,7 @@ class App extends Component {
     console.log(this.state.date)
   }
 
-   render () {
+  render () {
     return (
       <div>
         <People
@@ -98,6 +99,9 @@ class App extends Component {
         <Age age={this.state.age} onAgeClick={this.getAgeValue} />
         <Sliderbar dataValue={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]} />
         <ResetButton foo={this.getReset} />
+        <Genres onGenreClick={this.getGenresValue} />
+        <Main
+          results={this.state.ajaxData} />
       </div>
     )
   }

@@ -20,10 +20,9 @@ class Genres extends Component {
 		this.setState({
 			genres:this.state.genres.concat(event.target.name) // sets component state to the name of the genre button clicked
 		})
-
 		this.props.onGenreClick(this.state.genres) // concats the genres to the app main state
-	}
-		
+		}
+	
 	}
 
 	onGenreSubmit = (event) => {
