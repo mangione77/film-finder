@@ -25,11 +25,13 @@ const handle = (props) => {
 };
 
 const wrapperStyle = { width: 200, margin: 50 };
+const newDate = new Date();
+const currentYear = newDate.getFullYear();
 
 export const Sliderbar = () => (
   <div>
     <div style={wrapperStyle}>
-      <Range min={1895} max={2017} defaultValue={[1895, 2017]} tipFormatter={value => `${value}`} />
+      <Range min={1895} max={2017} defaultValue={[1895, currentYear]} tipFormatter={value => `${value}`} />
     </div>
   </div>
 )
