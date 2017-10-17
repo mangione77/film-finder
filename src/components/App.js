@@ -7,8 +7,10 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      algo: '',
-      people: []
+      people: [],
+      genres: [],
+      age: 0,
+      date: {}
     }
     this.getValuePeople = this.getValuePeople.bind(this)
   }
@@ -18,11 +20,12 @@ class App extends Component {
     })
     console.log(this.state)
   }
-
+  
   render () {
     return (
       <div>
       <People onSubmit={this.getValuePeople} people={this.state.people} />
+      <Age age={this.state.age}/>
         <Sliderbar />
       </div>
     )
