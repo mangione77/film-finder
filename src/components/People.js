@@ -10,6 +10,7 @@ class People extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
   handleSubmit (e) {
     e.preventDefault()
@@ -25,6 +26,11 @@ class People extends Component {
     })
   }
 
+  handleClick (e) {
+    this.props.onDelete(e.target.id)
+    console.log(e.target.id)
+  }
+
   render () {
     return (
       <div>
@@ -36,7 +42,7 @@ class People extends Component {
           <ListGroup componentClass='ul'>
             {
               this.props.people.map((item, i) => (
-                <div>{item}</div>
+                <div>{item} <span id={i} onClick={this.handleClick}>x</span></div>
               ))
             }
           </ListGroup>
