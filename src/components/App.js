@@ -7,7 +7,6 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      algo: '',
       people: []
     }
     this.getValuePeople = this.getValuePeople.bind(this)
