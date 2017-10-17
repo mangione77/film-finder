@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Sliderbar from './Slider'
+import {Sliderbar} from './Sliderbar'
 import Age from './Age'
 
 class App extends Component {
