@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ListGroup} from 'react-bootstrap'
+import {ListGroup, FormControl, FormGroup, HelpBlock, ControlLabel} from 'react-bootstrap'
 // import PeopleInput from './PeopleInput'
 
 class People extends Component {
@@ -34,9 +34,16 @@ class People extends Component {
   render () {
     return (
       <div>
-        <label htmlFor='people'>Actor / Director:</label>
         <form onSubmit={this.handleSubmit}>
-          <input id='people' type='text' onChange={this.handleChange} value={this.state.value} />
+          <FormGroup controlId='formBasicText'>
+            <ControlLabel>Actor / Director:</ControlLabel>
+            <FormControl
+              type='text'
+              value={this.state.value}
+              placeholder='Enter Person'
+              onChange={this.handleChange}
+            />
+          </FormGroup>
         </form>
         <div>
           <ListGroup componentClass='ul'>

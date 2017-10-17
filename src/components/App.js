@@ -41,12 +41,12 @@ class App extends Component {
   render () {
     return (
       <div>
-      <People 
-        onSubmit={this.getValuePeople}
-        people={this.state.people}
-        onDelete={this.deleteValuePeople}
-      />
-      <Age age={this.state.age} onAgeClick={this.getAgeValue} />
+        <People
+          onSubmit={this.getValuePeople}
+          people={this.state.people}
+          onDelete={this.deleteValuePeople}
+        />
+        <Age age={this.state.age} onAgeClick={this.getAgeValue} />
         <Sliderbar />
       </div>
     )
