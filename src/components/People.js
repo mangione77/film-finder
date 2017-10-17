@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ListGroup} from 'react-bootstrap'
+import {ListGroup, FormControl, FormGroup, ControlLabel} from 'react-bootstrap'
 // import PeopleInput from './PeopleInput'
 
 class People extends Component {
@@ -10,6 +10,7 @@ class People extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
   handleSubmit (e) {
     e.preventDefault()
@@ -25,18 +26,30 @@ class People extends Component {
     })
   }
 
+  handleClick (e) {
+    this.props.onDelete(e.target.id)
+    console.log(e.target.id)
+  }
+
   render () {
     return (
       <div>
-        <label htmlFor='people'>Actor / Director:</label>
         <form onSubmit={this.handleSubmit}>
-          <input id='people' type='text' onChange={this.handleChange} value={this.state.value} />
+          <FormGroup controlId='formBasicText'>
+            <ControlLabel>Actor / Director:</ControlLabel>
+            <FormControl
+              type='text'
+              value={this.state.value}
+              placeholder='Enter Person'
+              onChange={this.handleChange}
+            />
+          </FormGroup>
         </form>
         <div>
           <ListGroup componentClass='ul'>
             {
               this.props.people.map((item, i) => (
-                <div>{item}</div>
+                <div>{item} <span id={i} onClick={this.handleClick}>x</span></div>
               ))
             }
           </ListGroup>

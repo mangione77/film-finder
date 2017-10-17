@@ -7,35 +7,15 @@ import Slider from 'rc-slider';
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
-const Handle = Slider.Handle;
-
-const handle = (props) => {
-  const { value, dragging, index, ...restProps } = props;
-  return (
-    <Tooltip
-      prefixCls="rc-slider-tooltip"
-      overlay={value}
-      visible={dragging}
-      placement="top"
-      key={index}
-    >
-      <Handle value={value} {...restProps} />
-    </Tooltip>
-  );
-};
-
 const wrapperStyle = { width: 200, margin: 50 };
 
-export const Sliderbar = () => (
+const newDate = new Date();
+const currentYear = newDate.getFullYear();
+
+export const Sliderbar = props => (
   <div>
     <div style={wrapperStyle}>
-      <Range min={1895} max={2017} defaultValue={[1895, 2017]} tipFormatter={value => `${value}`} />
+      <Range min={1895} max={2017} allowCross={false} onAfterChange= {props.currentValue} defaultValue={[1895, currentYear]} tipFormatter={value => `${value}`} />
     </div>
   </div>
 )
-
-
-
-
-
-
