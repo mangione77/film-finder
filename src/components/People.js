@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ListGroup, FormControl, FormGroup, HelpBlock, ControlLabel} from 'react-bootstrap'
+import {ListGroup, FormControl, FormGroup, ControlLabel} from 'react-bootstrap'
 // import PeopleInput from './PeopleInput'
 
 class People extends Component {
