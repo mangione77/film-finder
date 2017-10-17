@@ -8,7 +8,6 @@ class Age extends Component {
 
 	}
 
-
 	render() {
 			return (
 				<div className="btn-group">
