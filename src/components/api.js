@@ -36,9 +36,14 @@ function generateUrl (state) {
     baseUrl += `&primary_release_year=${state.date[1]}`
   }
 
-  /* CATEGORY */
-  
-  
+  /* GENRE */
+  if (state.genres.length) {
+    state.genres.forEach((genre, i) => {
+      baseUrl += (i ? ',' : '') + genre
+    })
+  }
+  baseUrl += `?with_genres=878`
+
   /* ORDER */
   baseUrl += `&sort_by=${state.sort}`
 
