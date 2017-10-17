@@ -15,36 +15,29 @@ class App extends Component {
     this.getValuePeople = this.getValuePeople.bind(this)
     this.getAgeValue = this.getAgeValue.bind(this)
     this.deleteValuePeople = this.deleteValuePeople.bind(this)
-
   }
-
   getValuePeople (value) {
     if (value.trim().length) {
       this.setState({
         people: [...this.state.people, value.trim()]
       })
     }
-    console.log(this.state)
   }
   deleteValuePeople (value) {
     var newArray = this.state.people
     newArray.splice(value, 1)
-    
     this.setState({
       people: newArray
     })
   }
-
   getAgeValue (value) {
     this.setState({
       age: value
     })
   }
-
   componentDidUpdate () {
     console.log(this.state.age)
   }
-
   render () {
     return (
       <div>
