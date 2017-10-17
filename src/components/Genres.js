@@ -11,7 +11,6 @@ class Genres extends Component {
 		}
 
 		this.onGenreClickHandler = this.onGenreClickHandler.bind(this)
-		this.onGenreSubmit = this.onGenreSubmit.bind(this)
 	}
 	
 	onGenreClickHandler = (event) => { 
@@ -22,20 +21,17 @@ class Genres extends Component {
 		})
 		this.props.onGenreClick(this.state.genres) // concats the genres to the app main state
 		}
-	
+
 	}
 
-	onGenreSubmit = (event) => {
-		event.preventDefault()
-		this.setState({
-			genres:[] // empties already selected genres
-		})
-		this.props.onGenreClick(this.state.genres) // empties main component genres state
+	componentDidUpdate() {
+		console.log(this.state.genres)
 	}
 
 
 	render() {
 		return (<ButtonGroup>
+<<<<<<< HEAD
 				<Button name="action" id='28' onClick={this.onGenreClickHandler}>Action</Button>
 				<Button name="adventure" id='12' onClick={this.onGenreClickHandler}>Adventure</Button>
 				<Button name="animation" id='16' onClick={this.onGenreClickHandler}>Animation</Button>
@@ -55,6 +51,14 @@ class Genres extends Component {
 				<Button name="war" id='10752' onClick={this.onGenreClickHandler}>War</Button>
 				<Button name="western" id='37' onClick={this.onGenreClickHandler}>Western</Button>
 				<Button name="confirm" id='' onClick={this.onGenreSubmit}>Clear!</Button>
+=======
+				<Button name="action" onClick={this.onGenreClickHandler}>Action</Button>
+				<Button name="adventure" onClick={this.onGenreClickHandler}>Adventure</Button>
+				<Button name="comedy" onClick={this.onGenreClickHandler}>Comedy</Button>
+				<Button name="drama" onClick={this.onGenreClickHandler}>Drama</Button>
+				<Button name="horror" onClick={this.onGenreClickHandler}>Horror</Button>
+				<Button name="science_fiction" onClick={this.onGenreClickHandler}>Sci-Fi</Button>
+>>>>>>> 82a9ef80c87b5cdc103b9d7760e97cdc649b0561
 				</ButtonGroup>)
 	}
 }

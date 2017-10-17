@@ -6,6 +6,11 @@ import Genres from './Genres'
 import { Main } from './Main'
 import {ResetButton} from './ResetButton'
 import {sendData} from './api'
+import { Sidebar } from './Sidebar'
+
+import './App.css'
+
+import { Grid, Row, Col } from 'react-bootstrap'
 
 class App extends Component {
   constructor () {
@@ -62,7 +67,6 @@ class App extends Component {
       age: 21,
       date: [1895, this.currentYear]
     })
-    console.log(this.state)
   }
 
   getValueSliderBar (value) {
@@ -85,11 +89,11 @@ class App extends Component {
   }
 
   componentDidUpdate () {
-    console.log(this.state.age)
-    console.log(this.state.date)
+    console.log(this.state)
   }
 
   render () {
+<<<<<<< HEAD
     return (
       <div>
         <People
@@ -105,7 +109,27 @@ class App extends Component {
           results={this.state.ajaxData} />
       </div>
     )
+=======
+    return(<Grid>
+        <Row>
+        <Col xs={6} md={4}>
+          <Sidebar 
+          people={this.state.people} onSubmit={this.getValuePeople} onDelete={this.deleteValuePeople}
+          age={this.state.age} onAgeClick={this.getAgeValue}
+          onGenreClick={this.getGenresValue}
+          data={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]}
+          resetData={this.getReset}
+          />
+        </Col>
+        <Col xs={6} md={8}>
+          <Main />
+        </Col>    
+        </Row>  
+        </Grid>)
+>>>>>>> 82a9ef80c87b5cdc103b9d7760e97cdc649b0561
   }
 }
 
 export default App
+
+
