@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {
       people: [],
       genres: [],
-      age: 0,
+      age: '',
       date: [1895, this.currentYear],
       ajaxData: []
     }
