@@ -13,19 +13,33 @@ class App extends Component {
       date: {}
     }
     this.getValuePeople = this.getValuePeople.bind(this)
+    this.getAgeValue = this.getAgeValue.bind(this)
   }
+
   getValuePeople (value) {
     this.setState({
       people: [...this.state.people, value]
     })
     console.log(this.state)
   }
+
+  getAgeValue (value) {
+    this.setState({
+      age:value
+    })
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.age)
+  }
+
+
   
   render () {
     return (
       <div>
       <People onSubmit={this.getValuePeople} people={this.state.people} />
-      <Age age={this.state.age}/>
+      <Age age={this.state.age} onAgeClick={this.getAgeValue} />
         <Sliderbar />
       </div>
     )
