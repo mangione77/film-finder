@@ -18,8 +18,9 @@ class App extends Component {
       genres: ['dsasdasd', 'asdadasd', 'asdadasdasd'],
       age: '',
       date: [1895, this.currentYear],
-      sort: 'popularity',
-      ajaxData: []
+      sort: 'popularity.desc',
+      ajaxData: [],
+      page: 1
     }
     this.getValuePeople = this.getValuePeople.bind(this)
     this.getGenresValue = this.getGenresValue.bind(this)

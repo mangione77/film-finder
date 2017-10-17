@@ -9,29 +9,25 @@ export function sendData (state) {
 function generateUrl (state) {
   console.log(state)
   let baseUrl = 'https://api.themoviedb.org/3/discover/movie?'
-  // state.age
 
   /* PEOPLE */
   if (state.people.length) {
     state.people.forEach((person, i) => {
-      if (i > 0) {
-        baseUrl += ','
-      }
-      baseUrl += getPersonId(person)
+      baseUrl += (i ? ',' : '') + getPersonId(person)
     })
   }
 
   /* AGE */
-    baseUrl += `&certification_country=US&certification.lte=${state.age}`
-    /*
-      NR: NO INFO
-      G: ALL AGES
-      PG: 10
-      PG-13: 13
-      R: 21
-      NC-17: SEXO, DROGAS & ROCK
+  /*
+    NR: NO INFO
+    G: ALL AGES
+    PG: 10
+    PG-13: 13
+    R: 21
+    NC-17: SEXO, DROGAS & ROCK
 
-    */
+  */
+  baseUrl += `&certification_country=US&certification.lte=${state.age}`
 
   /* DATE */
   if (state.date[0] !== state.date[1]) {
@@ -41,6 +37,13 @@ function generateUrl (state) {
   }
 
   /* CATEGORY */
+  
+  
+  /* ORDER */
+  baseUrl += `&sort_by=${state.sort}`
+
+  /* PAGE */
+  baseUrl += `&page=${state.page}`
   baseUrl += '&api_key=%%APIKEY%%'
   console.log(baseUrl)
   return baseUrl.replace('%%APIKEY%%', apiKey)
