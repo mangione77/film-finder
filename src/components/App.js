@@ -2,13 +2,21 @@ import React, { Component } from 'react'
 import {Sliderbar} from './Sliderbar'
 import People from './People'
 import Age from './Age'
+import Genres from './Genres'
 
 class App extends Component {
   constructor () {
     super()
     this.state = {
       people: [],
-      genres: [],
+      genres: {
+        action:false,
+        adventure:false,
+        comedy:false,
+        drama:false,
+        horror:false,
+        science_fiction:false
+      },
       age: 0,
       date: {}
     }
