@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
+import {Sliderbar} from './Sliderbar'
 import People from './People'
-import Sliderbar from './Slider'
 import Age from './Age'
 
 class App extends Component {
   constructor () {
     super()
     this.state = {
+<<<<<<< HEAD
       people: [],
       genres: [],
       age: 0,
       date: {}
+=======
+      people: []
+>>>>>>> 8021690e7da3663390a91b959083b06996c0bf52
     }
     this.getValuePeople = this.getValuePeople.bind(this)
     this.getAgeValue = this.getAgeValue.bind(this)
