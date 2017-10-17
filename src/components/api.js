@@ -13,7 +13,7 @@ function generateUrl (state) {
   /* PEOPLE */
   if (state.people.length) {
     state.people.forEach((person, i) => {
-      baseUrl += (i ? ',' : '') + getPersonId(person)
+      baseUrl += '&with_people=' + (i ? ',' : '') + getPersonId(person)
     })
   }
 
@@ -39,10 +39,9 @@ function generateUrl (state) {
   /* GENRE */
   if (state.genres.length) {
     state.genres.forEach((genre, i) => {
-      baseUrl += (i ? ',' : '') + genre
+      baseUrl += '&with_genres=' + (i ? ',' : '') + genre
     })
   }
-  baseUrl += `?with_genres=878`
 
   /* ORDER */
   baseUrl += `&sort_by=${state.sort}`
