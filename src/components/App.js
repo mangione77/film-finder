@@ -56,8 +56,7 @@ class App extends Component {
         ajaxData: data.data.results
       })
     })
-  }
-  
+  } 
   /* COMPONENT METHODS */
   componentWillMount () {
     this.getAjaxData()
@@ -93,17 +92,14 @@ class App extends Component {
   render () {
     return (
       <div>
-        <People onSubmit={this.getValuePeople} people={this.state.people} />
-        <Age age={this.state.age} onAgeClick={this.getAgeValue} />
-        <Sliderbar dataValue={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]} />
-        <ResetButton foo={this.getReset} />
         <People
           onSubmit={this.getValuePeople}
           people={this.state.people}
           onDelete={this.deleteValuePeople}
         />
         <Age age={this.state.age} onAgeClick={this.getAgeValue} />
-        <Sliderbar />
+        <Sliderbar dataValue={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]} />
+        <ResetButton foo={this.getReset} />
       </div>
     )
   }
