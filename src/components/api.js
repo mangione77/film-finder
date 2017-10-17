@@ -6,8 +6,28 @@ export function sendData (state) {
   return axios.get(generateUrl(state))
 }
 
-export function generateUrl (state) {
+function generateUrl (state) {
   console.log(state)
-  const url = 'https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=%%APIKEY%%'
-  return url.replace('%%APIKEY%%', apiKey)
+  let baseUrl = 'https://api.themoviedb.org/3/discover/movie?'
+  // state.age
+  /* PEOPLE */
+  if (state.people.length) {
+    state.people.forEach((person, i) => {
+      if (i > 0) {
+        baseUrl += ','
+      }
+      baseUrl += getPersonId(person)
+    })
+  }
+
+  /* AGE */
+  /* TIME */
+  /* CATEGORY */
+  baseUrl += 'api_key=%%APIKEY%%'
+  console.log(baseUrl)
+  return baseUrl.replace('%%APIKEY%%', apiKey)
+}
+
+function getPersonId (person) {
+  return 16
 }
