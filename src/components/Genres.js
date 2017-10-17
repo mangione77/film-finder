@@ -11,7 +11,6 @@ class Genres extends Component {
 		}
 
 		this.onGenreClickHandler = this.onGenreClickHandler.bind(this)
-		this.onGenreSubmit = this.onGenreSubmit.bind(this)
 	}
 	
 	onGenreClickHandler = (event) => { 
@@ -22,15 +21,11 @@ class Genres extends Component {
 		})
 		this.props.onGenreClick(this.state.genres) // concats the genres to the app main state
 		}
-	
+
 	}
 
-	onGenreSubmit = (event) => {
-		event.preventDefault()
-		this.setState({
-			genres:[] // empties already selected genres
-		})
-		this.props.onGenreClick(this.state.genres) // empties main component genres state
+	componentDidUpdate() {
+		console.log(this.state.genres)
 	}
 
 
@@ -42,7 +37,6 @@ class Genres extends Component {
 				<Button name="drama" onClick={this.onGenreClickHandler}>Drama</Button>
 				<Button name="horror" onClick={this.onGenreClickHandler}>Horror</Button>
 				<Button name="science_fiction" onClick={this.onGenreClickHandler}>Sci-Fi</Button>
-				<Button name="confirm" onClick={this.onGenreSubmit}>Clear!</Button>
 				</ButtonGroup>)
 	}
 }
