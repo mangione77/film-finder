@@ -49,7 +49,7 @@ class People extends Component {
           <ListGroup componentClass='ul'>
             {
               this.props.people.map((item, i) => (
-                <div>{item} <span id={i} onClick={this.handleClick}>x</span></div>
+                <div>{item.name} <span id={i} onClick={this.handleClick}>x</span></div>
               ))
             }
           </ListGroup>
