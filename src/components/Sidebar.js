@@ -17,6 +17,7 @@ export const Sidebar = (props) => {
         genreAdd={props.genreAdd}
         genreDelete={props.genreDelete}
         genreValue={props.genreValue}
+        genreClear={props.genreClear}
       />
       <Age
         age={props.age}

@@ -30,6 +30,7 @@ class App extends Component {
     this.getReset = this.getReset.bind(this)
     this.deleteFilterPeople = this.deleteFilterPeople.bind(this)
     this.deleteFilterGenre = this.deleteFilterGenre.bind(this)
+    this.clearFilterGenre = this.clearFilterGenre.bind(this)
   }
 
   updateFilterState (filter, value) {
@@ -68,20 +69,28 @@ class App extends Component {
   updateFilterGenre (value) {
     this.updateFilterState('genres', [...this.state.filters.genres, value])
   }
+
   updateFilterDate (value) {
     this.updateFilterState('date', value)
   }
+
   deleteFilterPeople (value) {
     var newArray = this.state.filters.people
     newArray.splice(value, 1)
     this.updateFilterState('people', newArray)
   }
+
   deleteFilterGenre (e) {
     let newArray = this.state.filters.genres
     const pos = newArray.indexOf(e.target.id)
     newArray.splice(pos, 1)
     this.updateFilterState('genres', newArray)
   }
+
+  clearFilterGenre () {
+    this.updateFilterState('genres', [])
+  }
+
   getReset () {
     this.setState({
       filters: {
@@ -91,7 +100,7 @@ class App extends Component {
         date: [1895, this.currentYear],
         sort: 'popularity.desc',
         page: 1
-      },
+      }
     })
   }
 
@@ -130,6 +139,7 @@ class App extends Component {
               genreValue={this.state.filters.genres}
               genreAdd={this.updateFilterGenre}
               genreDelete={this.deleteFilterGenre}
+              genreClear={this.clearFilterGenre}
               resetData={this.getReset}
             />
           </Col>

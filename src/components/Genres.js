@@ -4,49 +4,17 @@ class Genres extends Component {
   constructor (props) {
     super(props)
 
-    this.state = {
-      genres: []
-    }
-
     this.handleClick = this.handleClick.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.clearGenres = this.clearGenres.bind(this)
-    this.deleteElement = this.deleteElement.bind(this)
-    this.printState = this.printState.bind(this)
   }
 
   handleClick (event) {
-    //event.preventDefault()
-    console.log(this.props.genreValue)
     if (!this.props.genreValue.includes(event.target.id)) {
       this.props.genreAdd(event.target.id)
     } else {
       this.props.genreDelete(event)
     }
   }
-  deleteElement (e) {
-    let newArray = this.state.genres
-    const pos = newArray.indexOf(e.target.id)
-    newArray.splice(pos, 1)
-    this.setState({
-      genres: newArray
-    }, this.printState)
-  }
-  handleSubmit () {
-    console.log('clicked')
-  }
-  printState () {
-    console.log(this.state.genres)
-  }
-  clearGenres () {
-    this.setState({
-      genres: []
-    })
-    this.props.genreAdd([])
-  }
-  componentDidUpdate () {
-    // console.log(this.state.genres)
-  }
+
   render () {
     return (
       <div className='genres-group'>
@@ -68,7 +36,7 @@ class Genres extends Component {
         <button className='genre-btn' name='thriller' id='53' onClick={this.handleClick}>Thriller</button>
         <button className='genre-btn' name='war' id='10752' onClick={this.handleClick}>War</button>
         <button className='genre-btn' name='western' id='37' onClick={this.handleClick}>Western</button>
-        <button className='genre-btn' name='confirm' id='confirm' onClick={this.clearGenres}>Clear!</button>
+        <button className='genre-btn' name='confirm' id='confirm' onClick={this.props.genreClear}>Clear!</button>
       </div>
     )
   }
