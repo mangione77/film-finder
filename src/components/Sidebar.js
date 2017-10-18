@@ -8,7 +8,7 @@ import { ResetButton } from './ResetButton'
 
 export const Sidebar = (props) => {
 	return (<div>
-			<h1>FilmFinder</h1>
+			<img src="" alt=""/>
 			<Genres 
 			onGenreClick={props.onGenreClick}
 			/>

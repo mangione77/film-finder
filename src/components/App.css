@@ -1,0 +1,70 @@
+.sideBar {
+  background-color: #110723;
+}
+
+.row{
+  margin: 0px;
+}
+
+div.fluid.container {
+  width:100%;
+  padding: 0px;
+}
+
+div.sideBar{
+  height: 730px;
+  padding: 15px; 
+}
+
+/*sidebar elements
+*/
+
+/*genre buttons*/
+
+.genre-btn1{
+  margin: 6px;
+  margin-top: 8px;
+  border-radius: 30px;
+  font-family: Helvetica;
+  color: white;
+  background-color: #110723;
+  border: none;
+  width:120px;
+  height:50px;
+}
+
+.genre-btn1:hover{
+background: linear-gradient(to right, #7f00ff, #e100ff);
+}
+
+.genre-btn2{
+  margin: 6px;
+  margin-top: 8px;
+  border-radius: 30px;
+  font-family: Helvetica;
+  color: white;
+  background-color: #110723;
+  border: none;
+  width:120px;
+  height:50px;
+}
+
+.genre-btn2:hover {
+background: linear-gradient(to right, #7f00ff, #e100ff);
+}
+
+.genre-btn3{
+  margin: 6px;
+  margin-top: 8px;
+  border-radius: 30px;
+  font-family: Helvetica;
+  color: white;
+  background-color: #110723;
+  border: none;
+  width:120px;
+  height:50px;
+}
+
+.genre-btn3:hover {
+background: linear-gradient(to right, #7f00ff, #e100ff);
+}

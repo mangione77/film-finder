@@ -76,6 +76,7 @@ class App extends Component {
       })
     })
   }
+
   /* COMPONENT METHODS */
   componentWillMount () {
     this.getAjaxData()
@@ -92,9 +93,10 @@ class App extends Component {
   }
 
   render () {
-    return(<Grid>
+    return(
+      <Grid className="fluid">
         <Row>
-        <Col xs={6} md={4}>
+        <Col className="sideBar" xs={6} md={4}>
           <Sidebar 
           people={this.state.people} onSubmit={this.getValuePeople} onDelete={this.deleteValuePeople}
           age={this.state.age} onAgeClick={this.getAgeValue}
@@ -107,10 +109,8 @@ class App extends Component {
           <Main />
         </Col>    
         </Row>  
-        </Grid>)
+      </Grid>)
   }
 }
 
 export default App
-
-
