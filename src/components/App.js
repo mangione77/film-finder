@@ -38,6 +38,7 @@ class App extends Component {
 
   updateFilterState (filter, value) {
     let filters = Object.assign({}, this.state.filters)
+    filters.page = 1
     filters[filter] = value
     this.setState({filters}, this.getFilteredMovies)
   }
@@ -95,7 +96,6 @@ class App extends Component {
   }
 
   updateFilterSort (value) {
-    console.log(value)
     this.updateFilterState('sort', value)
   }
 
@@ -116,15 +116,22 @@ class App extends Component {
   getFilteredMovies () {
     var moviesUrl = generateUrl(this.state.filters)
     sendData(moviesUrl).then(data => {
+      let valueToSet
+      if (this.state.filters.page > 1) {
+        valueToSet = [...this.state.movies, ...data.data.results]
+      } else {
+        valueToSet = data.data.results
+      }
+      console.log(valueToSet)
       this.setState({
-        movies: data.data.results
+        movies: valueToSet
       })
     })
   }
 
   /* PAGINATION */
   getNextPage () {
-    this.updateFilterState('page', this.state.filters.page++)
+    this.updateFilterState('page', ++this.state.filters.page)
   }
 
   /* COMPONENT METHODS */
@@ -158,7 +165,9 @@ class App extends Component {
           </Col>
           <Col className='main' xs={6} md={8}>
             <SortButton sortItems={this.updateFilterSort} />
-            <Main allMovies={this.state.movies} />
+            <Main
+              allMovies={this.state.movies}
+              loadMore={this.getNextPage} />
           </Col>
         </Row>
       </Grid>
