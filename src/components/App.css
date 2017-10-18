@@ -8,14 +8,16 @@ body{
 
 .background {
   background: linear-gradient(to bottom , #0B0519, #180A4C);
+  position: absolute;
 }
 
 .sideBar {
-  background: linear-gradient(to bottom , #0B0519, #180A4C);
+  background: transparent;
 }
 
-.row{
+.grid{
   margin: 0px;
+  height: 100vh;
 }
 
 div.fluid.container {
@@ -52,20 +54,62 @@ div.sideBar{
 /*images files*/
 
 .images {
-  width: 20%;
   margin: 0px;
   height: 252px;
+  position: relative;
+  z-index: 1;
 }
+
 
 #image-container{
   margin-top: 80px;
   height: 550px;
-  width: 810px;
+  width: 790px;
   display: flex;
   display: inline-block;
   overflow: scroll;
   overflow-x: hidden;
-  border-radius: 20px;
+}
+
+.page-post{
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.movie-title {
+  color: white;
+  font-family: Helvetica;
+  font size: 16px;
+  position: absolute;
+  z-index: 10;
+  margin: 0px;
+  display: none;
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+}
+
+.page-post:hover .movie-title{
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.movie-description {
+  position: absolute;
+  z-index: 10;
+  padding: 15px;
+  color: white;
+  font-family: Helvetica;
+  font size: 14px;
+  margin: 0px;
+  margin-top: 80%;
+  display: none;
+}
+
+.page-post:hover .movie-description {
+  display: block;
 }
 
 /*genre buttons*/
