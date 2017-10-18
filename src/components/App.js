@@ -19,11 +19,13 @@ class App extends Component {
     const newDate = new Date()
     this.currentYear = newDate.getFullYear()
     this.state = {
-      people: [],
-      genres: [],
+      people: ['Braasdasdasduahidsd Pitt', 'Angelina Jolie'],
+      genres: [28, 35],
       age: '',
       date: [1895, this.currentYear],
-      ajaxData: []
+      sort: 'popularity.desc',
+      ajaxData: [],
+      page: 1
     }
     this.getValuePeople = this.getValuePeople.bind(this)
     this.getGenresValue = this.getGenresValue.bind(this)
@@ -67,6 +69,11 @@ class App extends Component {
     })
   }
 
+  getValueSliderBar (value) {
+    this.setState({
+      date: value
+    })
+  }
   /* GET DATA AJAX */
   getAjaxData () {
     sendData(this.state).then(data => {
@@ -82,34 +89,29 @@ class App extends Component {
     this.getAjaxData()
   }
 
-  getValueSliderBar (value) {
-    this.setState({
-      date: value
-    })
-  }
-
   componentDidUpdate () {
     console.log(this.state)
   }
 
   render () {
-    return(
-      <Grid className="fluid">
+    return (
+      <Grid className='fluid'>
         <Row>
-        <Col className="sideBar" xs={6} md={4}>
-          <Sidebar 
-          people={this.state.people} onSubmit={this.getValuePeople} onDelete={this.deleteValuePeople}
-          age={this.state.age} onAgeClick={this.getAgeValue}
-          onGenreClick={this.getGenresValue}
-          data={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]}
-          resetData={this.getReset}
-          />
-        </Col>
-        <Col xs={6} md={8}>
-          <Main />
-        </Col>    
-        </Row>  
-      </Grid>)
+          <Col className='sideBar' xs={6} md={4}>
+            <Sidebar
+              people={this.state.people} onSubmit={this.getValuePeople} onDelete={this.deleteValuePeople}
+              age={this.state.age} onAgeClick={this.getAgeValue}
+              onGenreClick={this.getGenresValue}
+              data={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]}
+              resetData={this.getReset}
+            />
+          </Col>
+          <Col xs={6} md={8}>
+            <Main />
+          </Col>
+        </Row>
+      </Grid>
+    )
   }
 }
 
