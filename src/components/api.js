@@ -8,18 +8,18 @@ export function sendData (state) {
   return axios.get(generateUrl(state))
 }
 
-async function generateUrl (state) {
+function generateUrl (state) {
   // console.log(state)
   let url = discoverUrl
 
   /* PEOPLE */
-  if (state.people.length) {
+ /* if (state.people.length) {
     let count = 0
     url += 'with_people='
     state.people.forEach((item) => {
       const personId = getPersonIdAll(item)
       console.log(personId)
-    })
+    })*/
 
     /*const aId = state.people.map(person => getPersonId(person))
 
@@ -39,8 +39,8 @@ async function generateUrl (state) {
       })
     })*/
 
-    url += '&'
-  }
+/*    url += '&'
+  }*/
 
   /* AGE */
   url += `certification_country=US&certification.lte=${state.age}`
@@ -73,7 +73,7 @@ async function generateUrl (state) {
   return url
 }
 
-function getPersonId (person) {
+/*function getPersonId (person) {
   person = person.trim().replace(' ', '%20')
   var urlPersonId = peopleUrl + `&query=${person}` + addApiKey()
   return axios.get(urlPersonId)
@@ -88,7 +88,7 @@ async function getPersonIdAll (person) {
       return data.data.results[0].id
     }
   })
-}
+}*/
 
 function addApiKey () {
   return `&api_key=${apiKey}`
