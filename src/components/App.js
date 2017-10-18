@@ -32,8 +32,9 @@ class App extends Component {
   }
 
   updateFilterState (filter, value) {
-    let filters = Object.assign({}, this.state.filters[filter])
-    this.setState({[filters]: value}, this.getFilteredMovies)
+    let filters = Object.assign({}, this.state.filters)
+    filters[filter] = value
+    this.setState({filters}, this.getFilteredMovies)
   }
 
   /* GET FILTER VALUES */
@@ -54,7 +55,8 @@ class App extends Component {
           }
         }
         // update state
-        this.updateFilterState('people', [...this.state.people, person])
+        console.log(this.state.filters.people)
+        this.updateFilterState('people', [...this.state.filters.people, person])
       })
     }
   }
@@ -69,7 +71,7 @@ class App extends Component {
     this.updateFilterState('date', value)
   }
   deleteFilterPeople (value) {
-    var newArray = this.state.people
+    var newArray = this.state.filters.people
     newArray.splice(value, 1)
     this.updateFilterState('people', newArray)
   }
