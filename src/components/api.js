@@ -16,8 +16,8 @@ async function generateUrl (state) {
   if (state.people.length) {
     let count = 0
     url += 'with_people='
-    state.people.forEach(() => {
-      const personId = await getPersonIdAll()
+    state.people.forEach((item) => {
+      const personId = getPersonIdAll(item)
       console.log(personId)
     })
 
