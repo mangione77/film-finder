@@ -150,7 +150,7 @@ class App extends Component {
               resetData={this.getReset}
             />
           </Col>
-          <Col className="main" xs={6} md={8}>
+          <Col className='main' xs={6} md={8}>
             <SortButton sortItems={this.updateFilterSort} />
             <Main allMovies={this.state.movies} />
           </Col>
