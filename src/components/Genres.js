@@ -24,7 +24,7 @@ class Genres extends Component {
 	}
 
 	componentDidUpdate() {
-		console.log(this.state.genres)
+		// console.log(this.state.genres)
 	}
 	render() {
 		return (
