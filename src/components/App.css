@@ -18,6 +18,13 @@ div.sideBar{
 /*sidebar elements
 */
 
+/*logo*/
+
+#logo {
+  max-width: 200px;
+  margin: 20px;
+}
+
 /*genre buttons*/
 
 .genre-btn{

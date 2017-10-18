@@ -88,7 +88,9 @@ class App extends Component {
   componentWillMount () {
     this.getAjaxData()
   }
-
+  componentDidMount () {
+    console.log(this.state)
+  }
   componentDidUpdate () {
     console.log(this.state)
   }
