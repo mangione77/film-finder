@@ -13,7 +13,6 @@ export function generateUrl (state) {
   let url = discoverUrl
 
   /* PEOPLE */
-  // console.log(state.people)
   let count = 0
   url += 'with_cast='
   state.people.forEach((item, i) => {
@@ -23,11 +22,10 @@ export function generateUrl (state) {
       count++
     }
   })
-  url += '&'
 
   /* AGE */
   // console.log(state.age)
-  url += `certification_country=US&certification=${state.age}`
+  url += `&certification_country=US&certification=${state.age}`
 
   /* DATE */
   if (state.date[0] !== state.date[1]) {
@@ -38,9 +36,6 @@ export function generateUrl (state) {
 
   /* GENRE */
   url += '&with_genres=' + state.genres.toString()
-  // state.genres.forEach((genre, i) => {
-  //   url += (i ? ',' : '') + genre
-  // })
 
   /* ORDER */
   url += `&sort_by=${state.sort}`
