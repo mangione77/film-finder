@@ -10,8 +10,10 @@ class Genres extends Component {
   handleClick (event) {
     if (!this.props.genreValue.includes(event.target.id)) {
       this.props.genreAdd(event.target.id)
+      event.target.className = 'genre-btn selected'
     } else {
-      this.props.genreDelete(event)
+      this.props.genreDelete(event.target.id)
+      event.target.className = 'genre-btn'
     }
   }
 

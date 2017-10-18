@@ -80,9 +80,9 @@ class App extends Component {
     this.updateFilterState('people', newArray)
   }
 
-  deleteFilterGenre (e) {
+  deleteFilterGenre (value) {
     let newArray = this.state.filters.genres
-    const pos = newArray.indexOf(e.target.id)
+    const pos = newArray.indexOf(value)
     newArray.splice(pos, 1)
     this.updateFilterState('genres', newArray)
   }
