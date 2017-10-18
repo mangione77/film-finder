@@ -14,7 +14,7 @@ class App extends Component {
     const newDate = new Date()
     this.currentYear = newDate.getFullYear()
     this.state = {
-      people: [{name: 'angelina jolie', id: 1160}, {name: 'dfvaudyvaudysv', id: undefined}],
+      people: [{id: 11701, name: 'Angelina Jolie'}, {id: 287, name: 'Brad Pitt'}, {id: undefined, name: 'sdasdadasdasd'}],
       genres: [28, 35],
       age: '',
       date: [1895, this.currentYear],
@@ -42,17 +42,27 @@ class App extends Component {
   /* GET FILTER VALUES */
   updateFilterPeople (value) {
     if (value.trim().length) {
-      this.updateFilterState('people', [...this.state.people, value.trim()])
-      // this.setState({
-      //   people: [...this.state.people, value.trim()]
-      // })
+      // get id from api
+      getPersonId(value).then(data => {
+        let person
+        if (data.data.results.length) {
+          person = {
+            id: data.data.results[0].id,
+            name: data.data.results[0].name
+          }
+        } else {
+          person = {
+            id: undefined,
+            name: value
+          }
+        }
+        // update state
+        this.updateFilterState('people', [...this.state.people, person])
+      })
     }
   }
   updateFilterAge (value) {
     this.updateFilterState('age', value)
-    // this.setState({
-    //   age: value
-    // })
   }
 
   updateFilterGenre (value) {
@@ -71,9 +81,6 @@ class App extends Component {
     var newArray = this.state.people
     newArray.splice(value, 1)
     this.updateFilterState('people', newArray)
-    // this.setState({
-    //   people: newArray
-    // })
   }
   getReset () {
     this.setState({
@@ -102,9 +109,6 @@ class App extends Component {
   componentWillMount () {
     this.getFilteredMovies()
   }
-  /*componentWillUpdate () {
-    this.getFilteredMovies()
-  }*/
   componentDidMount () {
     console.log(this.state)
   }
