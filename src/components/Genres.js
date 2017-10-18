@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { ButtonGroup, Button } from 'react-bootstrap'
 
 
 class Genres extends Component {
@@ -30,14 +29,15 @@ class Genres extends Component {
 
 
 	render() {
-		return (<ButtonGroup>
-				<Button name="action" onClick={this.onGenreClickHandler}>Action</Button>
-				<Button name="adventure" onClick={this.onGenreClickHandler}>Adventure</Button>
-				<Button name="comedy" onClick={this.onGenreClickHandler}>Comedy</Button>
-				<Button name="drama" onClick={this.onGenreClickHandler}>Drama</Button>
-				<Button name="horror" onClick={this.onGenreClickHandler}>Horror</Button>
-				<Button name="science_fiction" onClick={this.onGenreClickHandler}>Sci-Fi</Button>
-				</ButtonGroup>)
+		return (
+			<div>
+				<button className="genre-btn1" name="action" onClick={this.onGenreClickHandler}>Action</button>
+				<button className="genre-btn2" name="adventure" onClick={this.onGenreClickHandler}>Adventure</button>
+				<button className="genre-btn3" name="comedy" onClick={this.onGenreClickHandler}>Comedy</button>
+				<button className="genre-btn1" name="drama" onClick={this.onGenreClickHandler}>Drama</button>
+				<button className="genre-btn2" name="horror" onClick={this.onGenreClickHandler}>Horror</button>
+				<button className="genre-btn3" name="science_fiction" onClick={this.onGenreClickHandler}>Sci-Fi</button>
+		  </div>)
 	}
 }
 
