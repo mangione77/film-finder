@@ -108,7 +108,7 @@ class App extends Component {
         sort: 'popularity.desc',
         page: 1
       }
-    })
+    }, this.getFilteredMovies)
   }
 
   /* GET FILTERED MOVIES */
