@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { Main } from './Main'
 import {sendData, generateUrl, getPersonId} from './api'
 import { Sidebar } from './Sidebar'
-
 import './App.css'
-
 import { Grid, Row, Col } from 'react-bootstrap'
 
 class App extends Component {
@@ -34,9 +32,7 @@ class App extends Component {
   }
 
   updateFilterState (filter, value) {
-    this.setState({
-      [filter]: value
-    }, this.getFilteredMovies())
+    this.setState({[filter]: value}, this.getFilteredMovies)
   }
 
   /* GET FILTER VALUES */
@@ -84,11 +80,10 @@ class App extends Component {
       date: [1895, this.currentYear]
     })
   }
-  /* GET DATA AJAX: filtered movies */
-  getFilteredMovies () {
-    console.log('getFilteredMovies filtered moviess...')
-    var moviesUrl = generateUrl(this.state)
 
+  /* GET FILTERED MOVIES */
+  getFilteredMovies () {
+    var moviesUrl = generateUrl(this.state)
     sendData(moviesUrl).then(data => {
       this.setState({
         ajaxData: data.data.results
@@ -97,11 +92,11 @@ class App extends Component {
   }
 
   /* COMPONENT METHODS */
-  componentWillMount () {
+  componentDidMount () {
     this.getFilteredMovies()
   }
   componentDidUpdate () {
-    console.log(this.state)
+    // console.log('update', this.state)
   }
 
   render () {

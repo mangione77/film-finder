@@ -68,6 +68,7 @@ div.sideBar{
   display: flex;
   display: inline-block;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .page-post{
@@ -109,6 +110,7 @@ div.sideBar{
 
 .page-post:hover .movie-description {
   display: block;
+  border-radius: 20px;
 }
 
 /*genre buttons*/
@@ -116,6 +118,7 @@ div.sideBar{
 .genres-group{
   height: 200px;
   overflow: scroll;
+  overflow-x: hidden;
   margin:20px 0px;
 }
 
