@@ -5,10 +5,14 @@ import People from './People'
 import { Sliderbar } from './Sliderbar'
 import Age from './Age'
 import { ResetButton } from './ResetButton'
+import photoUrl from  "./Logo.svg"
 
 export const Sidebar = (props) => {
-	return (<div>
-			<img src="" alt=""/>
+	return (
+		<div>
+		 <div>
+		 	<img id="logo" src={photoUrl} alt="Logo"/>
+		 </div>
 			<Genres 
 			onGenreClick={props.onGenreClick}
 			/>
@@ -17,10 +21,10 @@ export const Sidebar = (props) => {
 			onAgeClick={props.onAgeClick}
 			/>
 			<People
-	          onSubmit={props.onSubmit}
-	          people={props.people}
-	          onDelete={props.onDelete}
-	        />
+		        onSubmit={props.onSubmit}
+		        people={props.people}
+		        onDelete={props.onDelete}
+		      />
 			<Sliderbar 
 			data={props.data}
 			currentValue={props.currentValue}
@@ -30,6 +34,5 @@ export const Sidebar = (props) => {
 			<ResetButton 
 			resetData={props.resetData}
 			/>
-
-			</div>)
+		</div>)
 }

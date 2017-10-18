@@ -118,7 +118,7 @@ class App extends Component {
             />
           </Col>
           <Col xs={6} md={8}>
-            <Main />
+            <Main allMovies={this.state.ajaxData} />
           </Col>
         </Row>
       </Grid>

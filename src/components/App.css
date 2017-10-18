@@ -12,12 +12,18 @@ div.fluid.container {
 }
 
 div.sideBar{
-  height: 730px;
   padding: 15px; 
 }
 
 /*sidebar elements
 */
+
+/*logo*/
+
+#logo {
+  max-width: 200px;
+  margin: 20px;
+}
 
 /*genre buttons*/
 
@@ -36,4 +42,3 @@ div.sideBar{
 .genre-btn:hover{
 background: linear-gradient(to right, #7f00ff, #e100ff);
 }
-
