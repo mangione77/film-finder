@@ -15,16 +15,24 @@ class Genres extends Component {
 
   handleClick (event) {
     event.preventDefault()
-    if (this.state.genres.includes(event.target.id) === false) {
+    if (!this.state.genres.includes(event.target.id)) {
       // sets component state to the id of the genre button clicked
       this.setState({
         genres: this.state.genres.concat(event.target.id)
       })
       // concats the genres to the app main state
-      this.props.onGenreClick(this.state.genres)
+      this.props.addElement(this.state.genres)
+    } else {
+      
     }
   }
-
+  deleteElement (e) {
+    var newArray = this.state.genre
+    newArray.splice(e.target.id, 1)
+    this.setState({
+      genres: newArray
+    })
+  }
   handleSubmit () {
     console.log('clicked')
   }
@@ -32,7 +40,7 @@ class Genres extends Component {
     this.setState({
       genres: []
     })
-    this.props.onGenreClick([])
+    this.props.addEelement([])
   }
   componentDidUpdate () {
     // console.log(this.state.genres)

@@ -14,7 +14,8 @@ export const Sidebar = (props) => {
         <img id='logo' src={photoUrl} alt='Logo' />
       </div>
       <Genres
-        onGenreClick={props.onGenreClick}
+        addElement={props.onGenreClick}
+        deleteElement={props.deleteElement}
       />
       <Age
         age={props.age}
@@ -29,7 +30,6 @@ export const Sidebar = (props) => {
         data={props.data}
         currentValue={props.currentValue}
         defaultValue={props.defaultValue}
-
       />
       <ResetButton
         resetData={props.resetData}

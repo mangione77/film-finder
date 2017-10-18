@@ -53,26 +53,26 @@ div.sideBar{
 
 /*images files*/
 
-.images {
-  margin: 0px;
-  height: 252px;
-  position: relative;
-  z-index: 1;
-}
-
 
 #image-container{
   margin-top: 80px;
   height: 550px;
   width: 790px;
-  display: flex;
-  display: inline-block;
   overflow: scroll;
   overflow-x: hidden;
+  display: flex;
+  display: inline-block;
+}
+
+.images {
+  margin: 0px;
+  position: relative;
+  z-index: 1;
+  max-width:200px;
 }
 
 .page-post{
-  width: 20%;
+  display: flex;
   display: inline-block;
   position: relative;
   z-index: 1;
