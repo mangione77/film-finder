@@ -1,5 +1,17 @@
+body{
+  height: 100vh;
+}
+
+.row{
+  height: 100%;
+}
+
+.background {
+  background: linear-gradient(to bottom , #0B0519, #180A4C);
+}
+
 .sideBar {
-  background-color: #110723;
+  background: linear-gradient(to bottom , #0B0519, #180A4C);
 }
 
 .row{
@@ -15,6 +27,13 @@ div.sideBar{
   padding: 15px; 
 }
 
+.main {
+  padding: 0px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 /*sidebar elements
 */
 
@@ -25,7 +44,36 @@ div.sideBar{
   margin: 20px;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+/*images files*/
+
+.images {
+  width: 162px;
+  margin: 0px;
+  height: 252px;
+}
+
+#image-container{
+  margin-top: 80px;
+  height: 550px;
+  width: 810px;
+  display: flex;
+  display: inline-block;
+  overflow: scroll;
+  border-radius: 20px;
+}
+
 /*genre buttons*/
+
+.genres-group{
+  height: 200px;
+  overflow: scroll;
+  margin:20px 0px;
+}
 
 .genre-btn{
   margin: 6px;
@@ -33,7 +81,7 @@ div.sideBar{
   border-radius: 30px;
   font-family: Helvetica;
   color: white;
-  background-color: #110723;
+  background-color: #120A33;
   border: none;
   width:120px;
   height:50px;

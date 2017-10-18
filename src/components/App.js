@@ -97,8 +97,8 @@ class App extends Component {
 
   render () {
     return (
-      <Grid className='fluid'>
-        <Row>
+      <Grid className='fluid background'>
+        <Row className='grid'>
           <Col className='sideBar' xs={6} md={4}>
             <Sidebar
               people={this.state.people} onSubmit={this.getValuePeople} onDelete={this.deleteValuePeople}
@@ -108,7 +108,7 @@ class App extends Component {
               resetData={this.getReset}
             />
           </Col>
-          <Col xs={6} md={8}>
+          <Col className="main" xs={6} md={8}>
             <Main allMovies={this.state.ajaxData} />
           </Col>
         </Row>
