@@ -12,15 +12,15 @@ class App extends Component {
     const newDate = new Date()
     this.currentYear = newDate.getFullYear()
     this.state = {
-      people: [],
-      genres: [],
-      age: '',
-      date: [1895, this.currentYear],
-      sort: 'popularity.desc',
-      ajaxData: [],
-      page: 1,
-      movies: [],
-      filters: {}
+      filters: {
+        people: [],
+        genres: [],
+        age: '',
+        date: [1895, this.currentYear],
+        sort: 'popularity.desc',
+        page: 1
+      },
+      movies: []
     }
     this.updateFilterState = this.updateFilterState.bind(this)
     this.updateFilterPeople = this.updateFilterPeople.bind(this)
@@ -32,7 +32,9 @@ class App extends Component {
   }
 
   updateFilterState (filter, value) {
-    this.setState({[filter]: value}, this.getFilteredMovies)
+    let filters = Object.assign({}, this.state.filters)
+    filters[filter] = value
+    this.setState({filters}, this.getFilteredMovies)
   }
 
   /* GET FILTER VALUES */
@@ -53,7 +55,8 @@ class App extends Component {
           }
         }
         // update state
-        this.updateFilterState('people', [...this.state.people, person])
+        console.log(this.state.filters.people)
+        this.updateFilterState('people', [...this.state.filters.people, person])
       })
     }
   }
@@ -68,7 +71,12 @@ class App extends Component {
     this.updateFilterState('date', value)
   }
   deleteFilterPeople (value) {
-    var newArray = this.state.people
+    var newArray = this.state.filters.people
+    newArray.splice(value, 1)
+    this.updateFilterState('people', newArray)
+  }
+  deleteFilterGenre (value) {
+    var newArray = this.state.filters.people
     newArray.splice(value, 1)
     this.updateFilterState('people', newArray)
   }
@@ -76,17 +84,17 @@ class App extends Component {
     this.setState({
       people: [],
       genres: [],
-      age: 21,
+      age: '',
       date: [1895, this.currentYear]
     })
   }
 
   /* GET FILTERED MOVIES */
   getFilteredMovies () {
-    var moviesUrl = generateUrl(this.state)
+    var moviesUrl = generateUrl(this.state.filters)
     sendData(moviesUrl).then(data => {
       this.setState({
-        ajaxData: data.data.results
+        movies: data.data.results
       })
     })
   }
@@ -105,15 +113,21 @@ class App extends Component {
         <Row className='grid'>
           <Col className='sideBar' xs={6} md={4}>
             <Sidebar
-              people={this.state.people} onSubmit={this.updateFilterPeople} onDelete={this.deleteFilterPeople}
-              age={this.state.age} onAgeClick={this.updateFilterAge}
+              people={this.state.filters.people}
+              onSubmit={this.updateFilterPeople}
+              onDelete={this.deleteFilterPeople}
+              age={this.state.filters.age}
+              onAgeClick={this.updateFilterAge}
+              data={this.state.filters.date}
+              currentValue={this.updateFilterDate}
+              defaultValue={[1895, this.currentYear]}
               onGenreClick={this.updateFilterGenre}
-              data={this.state.date} currentValue={this.updateFilterDate} defaultValue={[1895, this.currentYear]}
+              deleteElement={this.deleteFilterGenre}
               resetData={this.getReset}
             />
           </Col>
-          <Col className="main" xs={6} md={8}>
-            <Main allMovies={this.state.ajaxData} />
+          <Col className='main' xs={6} md={8}>
+            <Main allMovies={this.state.movies} />
           </Col>
         </Row>
       </Grid>
