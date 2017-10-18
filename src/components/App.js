@@ -75,6 +75,11 @@ class App extends Component {
     newArray.splice(value, 1)
     this.updateFilterState('people', newArray)
   }
+  deleteFilterGenre (value) {
+    var newArray = this.state.filters.people
+    newArray.splice(value, 1)
+    this.updateFilterState('people', newArray)
+  }
   getReset () {
     this.setState({
       people: [],
@@ -113,10 +118,11 @@ class App extends Component {
               onDelete={this.deleteFilterPeople}
               age={this.state.filters.age}
               onAgeClick={this.updateFilterAge}
-              onGenreClick={this.updateFilterGenre}
               data={this.state.filters.date}
               currentValue={this.updateFilterDate}
               defaultValue={[1895, this.currentYear]}
+              onGenreClick={this.updateFilterGenre}
+              deleteElement={this.deleteFilterGenre}
               resetData={this.getReset}
             />
           </Col>

@@ -21,14 +21,18 @@ class Genres extends Component {
         genres: this.state.genres.concat(event.target.id)
       })
       // concats the genres to the app main state
-      this.props.onGenreClick(this.state.genres)
+      this.props.addEelement(this.state.genres)
     } else {
-      this.setState({
-        genres: this.state.genres.concat(event.target.id)
-      })
+      
     }
   }
-
+  deleteElement (e) {
+    var newArray = this.state.genre
+    newArray.splice(e.target.id, 1)
+    this.setState({
+      genres: newArray
+    })
+  }
   handleSubmit () {
     console.log('clicked')
   }
@@ -36,7 +40,7 @@ class Genres extends Component {
     this.setState({
       genres: []
     })
-    this.props.onGenreClick([])
+    this.props.addEelement([])
   }
   componentDidUpdate () {
     // console.log(this.state.genres)
