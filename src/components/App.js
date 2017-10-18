@@ -33,6 +33,7 @@ class App extends Component {
     this.updateFilterSort = this.updateFilterSort.bind(this)
     this.deleteFilterGenre = this.deleteFilterGenre.bind(this)
     this.clearFilterGenre = this.clearFilterGenre.bind(this)
+    this.getNextPage = this.getNextPage.bind(this)
   }
 
   updateFilterState (filter, value) {
@@ -121,12 +122,17 @@ class App extends Component {
     })
   }
 
+  /* PAGINATION */
+  getNextPage () {
+    this.updateFilterState('page', this.state.filters.page++)
+  }
+
   /* COMPONENT METHODS */
   componentDidMount () {
     this.getFilteredMovies()
   }
   componentDidUpdate () {
-    console.log('update', this.state)
+    // console.log('update', this.state)
   }
 
   render () {

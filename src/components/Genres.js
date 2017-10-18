@@ -17,7 +17,6 @@ class Genres extends Component {
     }
   }
   componentWillReceiveProps (nextProps) {
-    console.log('called props', !nextProps.genreValue.length)
     if (!nextProps.genreValue.length) {
       let selected = document.getElementsByClassName('selected')
       if (selected.length) {
