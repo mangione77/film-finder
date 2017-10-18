@@ -8,7 +8,7 @@ export function sendData (state) {
   return axios.get(generateUrl(state))
 }
 
-function generateUrl (state) {
+async function generateUrl (state) {
   // console.log(state)
   let url = discoverUrl
 
@@ -16,8 +16,12 @@ function generateUrl (state) {
   if (state.people.length) {
     let count = 0
     url += 'with_people='
+    state.people.forEach(() => {
+      const personId = await getPersonIdAll()
+      console.log(personId)
+    })
 
-    const aId = state.people.map(person => getPersonId(person))
+    /*const aId = state.people.map(person => getPersonId(person))
 
     Promise.all(aId).then(data => {
       data.forEach((data, i) => {
@@ -33,7 +37,7 @@ function generateUrl (state) {
           count++
         }
       })
-    })
+    })*/
 
     url += '&'
   }
@@ -64,7 +68,7 @@ function generateUrl (state) {
 
   /* API KEY */
   url += addApiKey()
-  
+
   console.log(url)
   return url
 }
@@ -73,6 +77,17 @@ function getPersonId (person) {
   person = person.trim().replace(' ', '%20')
   var urlPersonId = peopleUrl + `&query=${person}` + addApiKey()
   return axios.get(urlPersonId)
+}
+
+async function getPersonIdAll (person) {
+  person = person.trim().replace(' ', '%20')
+  var urlPersonId = peopleUrl + `&query=${person}` + addApiKey()
+  axios.get(urlPersonId).then(data => {
+    if (data.data.results.length) {
+      console.log(data.data.results[0].id)
+      return data.data.results[0].id
+    }
+  })
 }
 
 function addApiKey () {
