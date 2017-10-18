@@ -52,7 +52,7 @@ div.sideBar{
 /*images files*/
 
 .images {
-  width: 162px;
+  width: 20%;
   margin: 0px;
   height: 252px;
 }
@@ -64,6 +64,7 @@ div.sideBar{
   display: flex;
   display: inline-block;
   overflow: scroll;
+  overflow-x: hidden;
   border-radius: 20px;
 }
 
@@ -72,6 +73,7 @@ div.sideBar{
 .genres-group{
   height: 200px;
   overflow: scroll;
+  overflow-x: hidden;
   margin:20px 0px;
 }
 
