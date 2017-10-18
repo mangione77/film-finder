@@ -28,7 +28,7 @@ class Genres extends Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className="genres-group">
 				<button className="genre-btn" name="action" id='28' onClick={this.onGenreClickHandler}>Action</button>
 				<button className="genre-btn" name="adventure" id='12' onClick={this.onGenreClickHandler}>Adventure</button>
 				<button className="genre-btn" name="animation" id='16' onClick={this.onGenreClickHandler}>Animation</button>
