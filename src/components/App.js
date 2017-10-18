@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
-import {Sliderbar} from './Sliderbar'
-import People from './People'
-import Age from './Age'
-import Genres from './Genres'
 import { Main } from './Main'
-import {ResetButton} from './ResetButton'
-import {sendData} from './api'
+import {sendData, generateUrl, getPersonId} from './api'
 import { Sidebar } from './Sidebar'
 
 import './App.css'
@@ -19,46 +14,67 @@ class App extends Component {
     const newDate = new Date()
     this.currentYear = newDate.getFullYear()
     this.state = {
-      people: ['Braasdasdasduahidsd Pitt', 'Angelina Jolie'],
-      genres: [28, 35],
+      people: [],
+      genres: [],
       age: '',
       date: [1895, this.currentYear],
       sort: 'popularity.desc',
       ajaxData: [],
-      page: 1
+      page: 1,
+      movies: [],
+      filters: {}
     }
-    this.getValuePeople = this.getValuePeople.bind(this)
-    this.getGenresValue = this.getGenresValue.bind(this)
-    this.getAgeValue = this.getAgeValue.bind(this)
+    this.updateFilterState = this.updateFilterState.bind(this)
+    this.updateFilterPeople = this.updateFilterPeople.bind(this)
+    this.updateFilterAge = this.updateFilterAge.bind(this)
+    this.updateFilterGenre = this.updateFilterGenre.bind(this)
+    this.updateFilterDate = this.updateFilterDate.bind(this)
     this.getReset = this.getReset.bind(this)
-    this.getValueSliderBar = this.getValueSliderBar.bind(this)
-    this.deleteValuePeople = this.deleteValuePeople.bind(this)
+    this.deleteFilterPeople = this.deleteFilterPeople.bind(this)
   }
+
+  updateFilterState (filter, value) {
+    this.setState({
+      [filter]: value
+    }, this.getFilteredMovies())
+  }
+
   /* GET FILTER VALUES */
-  getValuePeople (value) {
+  updateFilterPeople (value) {
     if (value.trim().length) {
-      this.setState({
-        people: [...this.state.people, value.trim()]
+      // get id from api
+      getPersonId(value).then(data => {
+        let person
+        if (data.data.results.length) {
+          person = {
+            id: data.data.results[0].id,
+            name: data.data.results[0].name
+          }
+        } else {
+          person = {
+            id: undefined,
+            name: value
+          }
+        }
+        // update state
+        this.updateFilterState('people', [...this.state.people, person])
       })
     }
   }
-  getAgeValue (value) {
-    this.setState({
-      age: value
-    })
-  }
-  deleteValuePeople (value) {
-    var newArray = this.state.people
-    newArray.splice(value, 1)
-    this.setState({
-      people: newArray
-    })
+  updateFilterAge (value) {
+    this.updateFilterState('age', value)
   }
 
-  getGenresValue (value) {
-    this.setState({
-      genres: value
-    })
+  updateFilterGenre (value) {
+    this.updateFilterState('genres', value)
+  }
+  updateFilterDate (value) {
+    this.updateFilterState('date', value)
+  }
+  deleteFilterPeople (value) {
+    var newArray = this.state.people
+    newArray.splice(value, 1)
+    this.updateFilterState('people', newArray)
   }
   getReset () {
     this.setState({
@@ -68,16 +84,12 @@ class App extends Component {
       date: [1895, this.currentYear]
     })
   }
+  /* GET DATA AJAX: filtered movies */
+  getFilteredMovies () {
+    console.log('getFilteredMovies filtered moviess...')
+    var moviesUrl = generateUrl(this.state)
 
-  getValueSliderBar (value) {
-    this.setState({
-      date: value
-    })
-  }
-  /* GET DATA AJAX */
-  getAjaxData () {
-    sendData(this.state).then(data => {
-      console.log(data.data.results)
+    sendData(moviesUrl).then(data => {
       this.setState({
         ajaxData: data.data.results
       })
@@ -86,10 +98,7 @@ class App extends Component {
 
   /* COMPONENT METHODS */
   componentWillMount () {
-    this.getAjaxData()
-  }
-  componentDidMount () {
-    console.log(this.state)
+    this.getFilteredMovies()
   }
   componentDidUpdate () {
     console.log(this.state)
@@ -101,10 +110,10 @@ class App extends Component {
         <Row className='grid'>
           <Col className='sideBar' xs={6} md={4}>
             <Sidebar
-              people={this.state.people} onSubmit={this.getValuePeople} onDelete={this.deleteValuePeople}
-              age={this.state.age} onAgeClick={this.getAgeValue}
-              onGenreClick={this.getGenresValue}
-              data={this.state.date} currentValue={this.getValueSliderBar} defaultValue={[1895, this.currentYear]}
+              people={this.state.people} onSubmit={this.updateFilterPeople} onDelete={this.deleteFilterPeople}
+              age={this.state.age} onAgeClick={this.updateFilterAge}
+              onGenreClick={this.updateFilterGenre}
+              data={this.state.date} currentValue={this.updateFilterDate} defaultValue={[1895, this.currentYear]}
               resetData={this.getReset}
             />
           </Col>
