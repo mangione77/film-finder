@@ -93,7 +93,7 @@ div.sideBar{
 
 .page-post:hover .movie-title{
   display: block;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .movie-description {
@@ -110,7 +110,6 @@ div.sideBar{
 
 .page-post:hover .movie-description {
   display: block;
-  border-radius: 20px;
 }
 
 /*genre buttons*/
