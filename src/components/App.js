@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       people: [],
       genres: [],
-      age: 'nr',
+      age: '',
       date: [1895, this.currentYear],
       sort: 'popularity.desc',
       ajaxData: [],
@@ -32,11 +32,7 @@ class App extends Component {
   }
 
   updateFilterState (filter, value) {
-    this.setState({
-      [filter]: value
-    })
-    console.log('calling filtered movies', this.state)
-    this.getFilteredMovies()
+    this.setState({[filter]: value}, this.getFilteredMovies)
   }
 
   /* GET FILTER VALUES */
@@ -44,7 +40,6 @@ class App extends Component {
     if (value.trim().length) {
       // get id from api
       getPersonId(value).then(data => {
-        console.log(data)
         let person
         if (data.data.results.length) {
           person = {
@@ -58,7 +53,6 @@ class App extends Component {
           }
         }
         // update state
-        console.log('calling setstate')
         this.updateFilterState('people', [...this.state.people, person])
       })
     }
@@ -86,11 +80,10 @@ class App extends Component {
       date: [1895, this.currentYear]
     })
   }
-  /* GET DATA AJAX: filtered movies */
-  getFilteredMovies () {
-    console.log('getFilteredMovies filtered moviess...')
-    var moviesUrl = generateUrl(this.state)
 
+  /* GET FILTERED MOVIES */
+  getFilteredMovies () {
+    var moviesUrl = generateUrl(this.state)
     sendData(moviesUrl).then(data => {
       this.setState({
         ajaxData: data.data.results
@@ -99,14 +92,11 @@ class App extends Component {
   }
 
   /* COMPONENT METHODS */
-  componentWillMount () {
+  componentDidMount () {
     this.getFilteredMovies()
   }
   componentDidUpdate () {
-    console.log('update', this.state)
-  }
-  componentWillReceiveProps (nextProps) {
-    console.log('recieve props', this.state)
+    // console.log('update', this.state)
   }
 
   render () {

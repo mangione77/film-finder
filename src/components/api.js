@@ -9,7 +9,7 @@ export function sendData (url) {
 }
 
 export function generateUrl (state) {
-  // console.log(state)
+  console.log('recieved by api', state)
   let url = discoverUrl
 
   /* PEOPLE */
