@@ -29,6 +29,7 @@ class App extends Component {
     this.updateFilterDate = this.updateFilterDate.bind(this)
     this.getReset = this.getReset.bind(this)
     this.deleteFilterPeople = this.deleteFilterPeople.bind(this)
+    this.deleteFilterGenre = this.deleteFilterGenre.bind(this)
   }
 
   updateFilterState (filter, value) {
@@ -65,7 +66,7 @@ class App extends Component {
   }
 
   updateFilterGenre (value) {
-    this.updateFilterState('genres', value)
+    this.updateFilterState('genres', [...this.state.filters.genres, value])
   }
   updateFilterDate (value) {
     this.updateFilterState('date', value)
@@ -75,10 +76,11 @@ class App extends Component {
     newArray.splice(value, 1)
     this.updateFilterState('people', newArray)
   }
-  deleteFilterGenre (value) {
-    var newArray = this.state.filters.people
-    newArray.splice(value, 1)
-    this.updateFilterState('people', newArray)
+  deleteFilterGenre (e) {
+    let newArray = this.state.filters.genres
+    const pos = newArray.indexOf(e.target.id)
+    newArray.splice(pos, 1)
+    this.updateFilterState('genres', newArray)
   }
   getReset () {
     this.setState({
@@ -121,8 +123,9 @@ class App extends Component {
               data={this.state.filters.date}
               currentValue={this.updateFilterDate}
               defaultValue={[1895, this.currentYear]}
-              onGenreClick={this.updateFilterGenre}
-              deleteElement={this.deleteFilterGenre}
+              genreValue={this.state.filters.genres}
+              genreAdd={this.updateFilterGenre}
+              genreDelete={this.deleteFilterGenre}
               resetData={this.getReset}
             />
           </Col>

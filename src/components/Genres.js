@@ -17,18 +17,11 @@ class Genres extends Component {
 
   handleClick (event) {
     //event.preventDefault()
-    console.log('clicked to add')
-    console.log(!this.state.genres.includes(event.target.id))
-    if (!this.state.genres.includes(event.target.id)) {
-      // sets component state to the id of the genre button clicked
-      this.setState({
-        genres: [...this.state.genres, event.target.id]
-      }, this.printState)
-      // concats the genres to the app main state
-      this.props.addElement(this.state.genres)
+    console.log(this.props.genreValue)
+    if (!this.props.genreValue.includes(event.target.id)) {
+      this.props.genreAdd(event.target.id)
     } else {
-      console.log('clicked to delete')
-      this.deleteElement(event)
+      this.props.genreDelete(event)
     }
   }
   deleteElement (e) {
@@ -49,7 +42,7 @@ class Genres extends Component {
     this.setState({
       genres: []
     })
-    this.props.addElement([])
+    this.props.genreAdd([])
   }
   componentDidUpdate () {
     // console.log(this.state.genres)
