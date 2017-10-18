@@ -14,8 +14,8 @@ class App extends Component {
     const newDate = new Date()
     this.currentYear = newDate.getFullYear()
     this.state = {
-      people: [{id: 11701, name: 'Angelina Jolie'}, {id: 287, name: 'Brad Pitt'}, {id: undefined, name: 'sdasdadasdasd'}],
-      genres: [28, 35],
+      people: [],
+      genres: [],
       age: '',
       date: [1895, this.currentYear],
       sort: 'popularity.desc',
