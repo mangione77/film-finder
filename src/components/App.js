@@ -4,6 +4,7 @@ import {sendData, generateUrl, getPersonId} from './api'
 import { Sidebar } from './Sidebar'
 import './App.css'
 import { Grid, Row, Col } from 'react-bootstrap'
+import {SortButton} from './SortButton'
 
 class App extends Component {
   constructor () {
@@ -16,7 +17,7 @@ class App extends Component {
       genres: [],
       age: '',
       date: [1895, this.currentYear],
-      sort: 'popularity.desc',
+      sort: '',
       ajaxData: [],
       page: 1,
       movies: [],
@@ -72,6 +73,9 @@ class App extends Component {
     newArray.splice(value, 1)
     this.updateFilterState('people', newArray)
   }
+  updateFilterSort (value) {
+    this.updateFilterState('sort', value)
+  }
   getReset () {
     this.setState({
       people: [],
@@ -113,6 +117,7 @@ class App extends Component {
             />
           </Col>
           <Col className="main" xs={6} md={8}>
+            <SortButton sortItems= {this.updateFilterSort} />
             <Main allMovies={this.state.ajaxData} />
           </Col>
         </Row>

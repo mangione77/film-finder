@@ -136,3 +136,16 @@ div.sideBar{
 .genre-btn:hover{
 background: linear-gradient(to right, #7f00ff, #e100ff);
 }
+
+/* Drpodpwn button */
+
+#dropdown{
+  display: block;
+  height: 50px;
+}
+
+
+
+
+
+
