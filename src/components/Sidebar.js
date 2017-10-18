@@ -14,8 +14,10 @@ export const Sidebar = (props) => {
         <img id='logo' src={photoUrl} alt='Logo' />
       </div>
       <Genres
-        addElement={props.onGenreClick}
-        deleteElement={props.deleteElement}
+        genreAdd={props.genreAdd}
+        genreDelete={props.genreDelete}
+        genreValue={props.genreValue}
+        genreClear={props.genreClear}
       />
       <Age
         age={props.age}

@@ -64,11 +64,18 @@ div.sideBar{
   display: inline-block;
 }
 
-.images {
+/*.images {
   margin: 0px;
   position: relative;
   z-index: 1;
   max-width:200px;
+}*/
+
+.images {
+  width: 170px;
+  height:240px;
+  display:flex;
+  display:inline-block;
 }
 
 .page-post{
@@ -137,7 +144,8 @@ div.sideBar{
 background: linear-gradient(to right, #7f00ff, #e100ff);
 }
 
-/* Drpodpwn button */
+
+/* Dropdpwn button */
 
 #dropdown{
   display: block;
@@ -146,6 +154,7 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 
 
 
-
-
+.selected{
+  background: linear-gradient(to right, #0049ff, #009cff);
+}
 
