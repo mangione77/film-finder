@@ -12,7 +12,6 @@ div.fluid.container {
 }
 
 div.sideBar{
-  height: 730px;
   padding: 15px; 
 }
 
@@ -36,5 +35,3 @@ div.sideBar{
 .genre-btn:hover{
 background: linear-gradient(to right, #7f00ff, #e100ff);
 }
-
-
