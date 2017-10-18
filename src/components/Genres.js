@@ -12,30 +12,38 @@ class Genres extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.clearGenres = this.clearGenres.bind(this)
     this.deleteElement = this.deleteElement.bind(this)
+    this.printState = this.printState.bind(this)
   }
 
   handleClick (event) {
     //event.preventDefault()
+    console.log('clicked to add')
+    console.log(!this.state.genres.includes(event.target.id))
     if (!this.state.genres.includes(event.target.id)) {
       // sets component state to the id of the genre button clicked
       this.setState({
-        genres: this.state.genres.concat(event.target.id)
-      })
+        genres: [...this.state.genres, event.target.id]
+      }, this.printState)
       // concats the genres to the app main state
       this.props.addElement(this.state.genres)
     } else {
+      console.log('clicked to delete')
       this.deleteElement(event)
     }
   }
   deleteElement (e) {
-    var newArray = this.state.genres
-    newArray.splice(e.target.id, 1)
+    let newArray = this.state.genres
+    const pos = newArray.indexOf(e.target.id)
+    newArray.splice(pos, 1)
     this.setState({
       genres: newArray
-    })
+    }, this.printState)
   }
   handleSubmit () {
     console.log('clicked')
+  }
+  printState () {
+    console.log(this.state.genres)
   }
   clearGenres () {
     this.setState({
