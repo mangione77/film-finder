@@ -84,10 +84,14 @@ class App extends Component {
   }
   getReset () {
     this.setState({
-      people: [],
-      genres: [],
-      age: '',
-      date: [1895, this.currentYear]
+      filters: {
+        people: [],
+        genres: [],
+        age: '',
+        date: [1895, this.currentYear],
+        sort: 'popularity.desc',
+        page: 1
+      },
     })
   }
 
@@ -106,7 +110,7 @@ class App extends Component {
     this.getFilteredMovies()
   }
   componentDidUpdate () {
-    // console.log('update', this.state)
+    console.log('update', this.state)
   }
 
   render () {
