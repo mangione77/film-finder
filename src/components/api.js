@@ -4,8 +4,8 @@ const apiKey = '6bd0d7bca441e9c415f2da64a48c05d8'
 const discoverUrl = 'https://api.themoviedb.org/3/discover/movie?'
 const peopleUrl = 'https://api.themoviedb.org/3/search/person?'
 
-export function sendData (state) {
-  return axios.get(generateUrl(state))
+export function sendData (url) {
+  return axios.get(url)
 }
 
 export function generateUrl (state) {
@@ -64,27 +64,11 @@ export function getPersonId (person) {
   return axios.get(urlPersonId)
 }
 
-function getPersonIdAll (person) {
-  person = person.trim().replace(' ', '%20')
-  var urlPersonId = peopleUrl + `&query=${person}` + addApiKey()
-  axios.get(urlPersonId).then(data => {
-    if (data.data.results.length) {
-      console.log(data.data.results[0].id)
-      return data.data.results[0].id
-    }
-  })
-}
-
 function addApiKey () {
   return `&api_key=${apiKey}`
 }
 
-
-
 /*
-
-
-
 
 const aId = state.people.map(person => getPersonId(person))
 
@@ -95,16 +79,7 @@ Promise.all(aId).then(data => {
           personId = data.data.results[0].id
           console.log(data.data.results[0].id)
         }
-
-        
       })
     })
-
-
-
-
-
-
-
 
 */

@@ -67,15 +67,9 @@ class App extends Component {
 
   updateFilterGenre (value) {
     this.updateFilterState('genres', value)
-    // this.setState({
-    //   genres: value
-    // })
   }
   updateFilterDate (value) {
     this.updateFilterState('date', value)
-    /*this.setState({
-      date: value
-    })*/
   }
   deleteFilterPeople (value) {
     var newArray = this.state.people
@@ -93,24 +87,18 @@ class App extends Component {
   /* GET DATA AJAX: filtered movies */
   getFilteredMovies () {
     console.log('getFilteredMovies filtered moviess...')
-    // generateUrl(this.state)
-    // .then(data => {
-    // })
-    // sendData(apiUrl).then(data => {
-    //   console.log(data.data.results)
-    //   this.setState({
-    //     ajaxData: data.data.results
-    //   })
-    //   console.log(data)
-    // })
+    var moviesUrl = generateUrl(this.state)
+
+    sendData(moviesUrl).then(data => {
+      this.setState({
+        ajaxData: data.data.results
+      })
+    })
   }
 
   /* COMPONENT METHODS */
   componentWillMount () {
     this.getFilteredMovies()
-  }
-  componentDidMount () {
-    console.log(this.state)
   }
   componentDidUpdate () {
     console.log(this.state)
