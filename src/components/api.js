@@ -13,22 +13,21 @@ export function generateUrl (state) {
   let url = discoverUrl
 
   /* PEOPLE */
-  if (state.people.length) {
-    let count = 0
-    url += 'with_people='
-    state.people.forEach((item, i) => {
-      if (item.id !== undefined) {
-        url += ((i - count) ? ',' : '') + item.id
-      } else {
-        count++
-      }
-    })
-
-    url += '&'
-  }
+  console.log(state.people)
+  let count = 0
+  url += 'with_cast='
+  state.people.forEach((item, i) => {
+    if (item.id !== undefined) {
+      url += ((i - count) ? ',' : '') + item.id
+    } else {
+      count++
+    }
+  })
+  url += '&'
 
   /* AGE */
-  url += `certification_country=US&certification.lte=${state.age}`
+  console.log(state.age)
+  url += `certification_country=US&certification=${state.age}`
 
   /* DATE */
   if (state.date[0] !== state.date[1]) {
@@ -38,12 +37,10 @@ export function generateUrl (state) {
   }
 
   /* GENRE */
-  if (state.genres.length) {
-    url += '&with_genres='
-    state.genres.forEach((genre, i) => {
-      url += (i ? ',' : '') + genre
-    })
-  }
+  url += '&with_genres='
+  state.genres.forEach((genre, i) => {
+    url += (i ? ',' : '') + genre
+  })
 
   /* ORDER */
   url += `&sort_by=${state.sort}`

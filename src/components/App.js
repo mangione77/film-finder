@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { Main } from './Main'
 import {sendData, generateUrl, getPersonId} from './api'
 import { Sidebar } from './Sidebar'
-
 import './App.css'
-
 import { Grid, Row, Col } from 'react-bootstrap'
 
 class App extends Component {
@@ -16,7 +14,7 @@ class App extends Component {
     this.state = {
       people: [],
       genres: [],
-      age: '',
+      age: 'nr',
       date: [1895, this.currentYear],
       sort: 'popularity.desc',
       ajaxData: [],
@@ -36,7 +34,9 @@ class App extends Component {
   updateFilterState (filter, value) {
     this.setState({
       [filter]: value
-    }, this.getFilteredMovies())
+    })
+    console.log('calling filtered movies', this.state)
+    this.getFilteredMovies()
   }
 
   /* GET FILTER VALUES */
@@ -44,6 +44,7 @@ class App extends Component {
     if (value.trim().length) {
       // get id from api
       getPersonId(value).then(data => {
+        console.log(data)
         let person
         if (data.data.results.length) {
           person = {
@@ -57,6 +58,7 @@ class App extends Component {
           }
         }
         // update state
+        console.log('calling setstate')
         this.updateFilterState('people', [...this.state.people, person])
       })
     }
@@ -101,7 +103,10 @@ class App extends Component {
     this.getFilteredMovies()
   }
   componentDidUpdate () {
-    console.log(this.state)
+    console.log('update', this.state)
+  }
+  componentWillReceiveProps (nextProps) {
+    console.log('recieve props', this.state)
   }
 
   render () {
