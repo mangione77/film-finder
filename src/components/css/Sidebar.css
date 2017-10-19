@@ -1,3 +1,15 @@
+/*logo*/
+
+#logo {
+  max-width: 200px;
+  margin: 20px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
 
 /*sidebar elements
 */
@@ -13,3 +25,35 @@ div.sideBar{
   padding: 25px; 
 }
 
+
+/*genre buttons*/
+
+.genres-group{
+  height: 450px;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin:20px auto;
+  padding: 0px auto;
+}
+
+.genre-btn{
+  margin: 7px;
+  margin-top: 8px;
+  border-radius: 30px;
+  font-family: Helvetica;
+  color: white;
+  background-color: #414345;
+  border: none;
+  width:30%;
+  height:50px;
+}
+
+.genre-btn:hover{
+background: linear-gradient(to right, #7f00ff, #e100ff);
+}
+
+/*selected class*/
+
+.selected{
+  background: linear-gradient(to right, #0049ff, #009cff);
+}
