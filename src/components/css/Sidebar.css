@@ -134,7 +134,7 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   }
 
   .fix-sidebar{
-    overflow: scroll;
+    overflow: auto;
     height: calc(100% - 10px);
   }
 
@@ -175,6 +175,14 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   color: white;
   width: 345px;
   z-index: 100;
+  }
+}
+
+@media (max-width: 800px) {
+ .sideBar {
+    width: 100%;
+    position: relative;
+    height: auto;
   }
 }
 
