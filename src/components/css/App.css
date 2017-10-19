@@ -32,11 +32,24 @@ div.fluid.container {
   height: 100%;
   display: flex;
   justify-content: center;
-  background: url(../../textures/black-back.jpg);
+  background: url(../textures/black-back.jpg);
   float: right;
 
 }
 
+/*sidebar elements
+*/
+
+.sideBar {
+  background: linear-gradient(to bottom , #232526, #414345);
+  float: left;
+  position: fixed;
+  height: 100%;
+}
+
+div.sideBar{
+  padding: 25px; 
+}
 /*logo*/
 
 #logo {

@@ -1,0 +1,15 @@
+
+/*sidebar elements
+*/
+
+.sideBar {
+  background: linear-gradient(to bottom , #232526, #414345);
+  float: left;
+  position: fixed;
+  height: 100%;
+}
+
+div.sideBar{
+  padding: 25px; 
+}
+

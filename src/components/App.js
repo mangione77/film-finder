@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Main from './Main'
 import {sendData, generateUrl, getPersonId} from './api'
 import { Sidebar } from './Sidebar'
-import './App.css'
+import './css/App.css'
 import { Grid, Row, Col } from 'react-bootstrap'
 
 class App extends Component {

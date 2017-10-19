@@ -15,13 +15,11 @@ class Main extends Component {
         this.last = element.scrollTop
         this.props.loadMore()
       }
-
     }
-    console.log(element.scrollTop, elementHeight)
+    // console.log(element.scrollTop, elementHeight)
   }
 
   componentDidMount () {
-    console.log('image-container', document.getElementById('image-container'))
     document.getElementById('image-container').addEventListener('scroll', this.handleScroll)
   }
   componentWillUnmount () {
@@ -34,16 +32,15 @@ class Main extends Component {
       <div id='image-container'>
         {
           this.props.allMovies.map((movie, id) => {
-        return (
-
-            <a className="page-post-button page-post" href={'#popup-' + id}>
-            <div key={id}>
-              <h5 className='movie-title'>{movie.title}<br />&#9734;{movie.vote_average}</h5>
-              <p className='movie-description'>{ movie.overview.substring(0, 50) + '...' }</p>
-              <img className='images' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
-            </div>
-            </a>  
-        )
+            return (
+              <a className='page-post-button page-post' href={'#popup-' + id}>
+                <div key={id}>
+                  <h5 className='movie-title'>{movie.title}<br />&#9734;{movie.vote_average}</h5>
+                  <p className='movie-description'>{ movie.overview.substring(0, 50) + '...' }</p>
+                  <img className='images' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+                </div>
+              </a>
+            )
           })
         }
       {/*  <div>

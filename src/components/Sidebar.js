@@ -6,6 +6,7 @@ import { Sliderbar } from './Sliderbar'
 import Age from './Age'
 import { ResetButton } from './ResetButton'
 import photoUrl from './Logo.svg'
+import './css/Sidebar.css'
 
 export const Sidebar = (props) => {
   return (
