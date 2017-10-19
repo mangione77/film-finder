@@ -1,3 +1,17 @@
+/* general */
+
+.sideBar {
+  background: linear-gradient(to bottom , #232526, #414345);
+  float: left;
+  position: fixed;
+  height: 100%;
+  color: white;
+}
+
+div.sideBar{
+  padding: 25px; 
+}
+
 /*logo*/
 
 #logo {
@@ -9,22 +23,6 @@
   display: flex;
   justify-content: center;
 }
-
-
-/*sidebar elements
-*/
-
-.sideBar {
-  background: linear-gradient(to bottom , #232526, #414345);
-  float: left;
-  position: fixed;
-  height: 100%;
-}
-
-div.sideBar{
-  padding: 25px; 
-}
-
 
 /*genre buttons*/
 
@@ -110,26 +108,26 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   background: linear-gradient(to right, #0049ff, #009cff);
 }
 
-@media (min-width: 767px) {
+@media (min-width: 500px) {
 
-     .genres-group{
-      height: 250px;
-      overflow: scroll;
-      overflow-x: hidden;
-      margin:20px auto 40px;
-      padding: 0px auto;
-    }
+  .genres-group{
+    height: 250px;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin:20px auto 40px;
+    padding: 0px auto;
+  }
 
-    .genre-btn{
-      margin: 7px;
-      margin-top: 8px;
-      border-radius: 30px;
-      font-family: Helvetica;
-      color: white;
-      background-color: #323335;
-      border: none;
-      width:46%;
-      height:50px;
+  .genre-btn{
+    margin: 7px;
+    margin-top: 8px;
+    border-radius: 30px;
+    font-family: Helvetica;
+    color: white;
+    background-color: #323335;
+    border: none;
+    width:46%;
+    height:50px;
   }
 }
 

@@ -5,17 +5,13 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  background: url(../../textures/black-back.jpg);
+  background: #101111;
   float: right;
 
 }
 
 #image-container{
-
-  height: calc(100%-99px);
-  // width: 100%;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow-y: auto;
   display: flex;
   display: inline-block;
   z-index:10;
