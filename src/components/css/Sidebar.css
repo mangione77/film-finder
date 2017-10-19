@@ -1,7 +1,7 @@
 /* general */
 
 .sideBar {
-  background: linear-gradient(to bottom , #232526, #414345);
+  background: linear-gradient(to bottom , #232526, #414345, #232526 );
   float: left;
   position: fixed;
   height: 100%;
@@ -45,7 +45,7 @@ div.sideBar{
   border-radius: 30px;
   font-family: Helvetica;
   color: white;
-  background-color: #3B3C3E;
+  background-color: #414345;
   border: none;
   width:30%;
   height:50px;
@@ -138,7 +138,7 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 
   .fix-sidebar{
     overflow: scroll;
-    height: calc(100% - 20px);
+    height: calc(100% - 10px);
   }
 
   .age-btn{
