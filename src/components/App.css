@@ -11,12 +11,8 @@ button:focus, input:focus {
 }
 
 .background {
-  background: linear-gradient(to bottom , #232526, #414345);
+  background-color: #414345;
   position: absolute;
-}
-
-.sideBar {
-  background: linear-gradient(to bottom , #232526, #414345);
 }
 
 .grid{
@@ -29,9 +25,7 @@ div.fluid.container {
   padding: 0px;
 }
 
-div.sideBar{
-  padding: 25px; 
-}
+/* main */
 
 .main {
   padding: 0px;
@@ -39,11 +33,23 @@ div.sideBar{
   display: flex;
   justify-content: center;
   background: url(../textures/black-back.jpg);
+  float: right;
+
 }
 
 /*sidebar elements
 */
 
+.sideBar {
+  background: linear-gradient(to bottom , #232526, #414345);
+  float: left;
+  position: fixed;
+  height: 100%;
+}
+
+div.sideBar{
+  padding: 25px; 
+}
 /*logo*/
 
 #logo {
@@ -60,9 +66,9 @@ div.sideBar{
 
 
 #image-container{
-  margin-top: 80px;
-  height: 750px;
-  width: 990px;
+  margin-top: 10px;
+  height: 100%;
+  width: 100%;
   overflow: scroll;
   overflow-x: hidden;
   display: flex;
@@ -72,70 +78,19 @@ div.sideBar{
 
 
 .images {
-  width: 170px;
-  height:240px;
   display:flex;
   display:inline-block;
+  width: 100%;
 }
 
 .page-post{
   display: flex;
   display: inline-block;
   position: relative;
+  width: 20%;
   z-index: 0;
   cursor: pointer;
 
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
-  background-color:red;
-}
-
-.popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 30%;
-  position: relative;
-  transition: all 5s ease-in-out;  
-}
-
-.popup h2 {
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
-}
-.popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.popup .close:hover {
-  color: #06D85F;
-}
-.popup .content {
-  max-height: 30%;
-  overflow: auto;
 }
 
 .movie-title {
@@ -183,7 +138,7 @@ div.sideBar{
 }
 
 .genre-btn{
-  margin: 6px;
+  margin: 7px;
   margin-top: 8px;
   border-radius: 30px;
   font-family: Helvetica;
@@ -201,12 +156,25 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 
 /* Dropdpwn button */
 
-#dropdown{
-  display: block;
-  height: 50px;
+.btn-group{
+  margin-top: 50px; 
 }
 
+.btn-default {
+  background-color: transparent;
+  color: white;
+}
 
+.btn-default:hover {
+  background: linear-gradient(to right, #0049ff, #009cff); 
+  border-style: none; 
+}
+
+.open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+  background: linear-gradient(to right, #0049ff, #009cff); 
+  border-style: none; 
+}
+/*selected class*/
 
 .selected{
   background: linear-gradient(to right, #0049ff, #009cff);
