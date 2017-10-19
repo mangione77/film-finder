@@ -21,7 +21,7 @@ export const Sidebar = (props) => {
         genreClear={props.genreClear}
       />
       <Age
-        age={props.age}
+        ageValue={props.ageValue}
         onAgeClick={props.onAgeClick}
       />
       <People

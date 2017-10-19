@@ -52,6 +52,58 @@ div.sideBar{
 background: linear-gradient(to right, #7f00ff, #e100ff);
 }
 
+ /* age */
+.age{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.age-btn{
+  border: none;
+  font-family: Helvetica;
+  color: white;
+  background-color: #414345;
+  padding: 10px;
+  width: calc(20% - 10px);
+  border-radius: 8px;
+  margin: 0 5px;
+}
+
+.allMovies:hover {
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+}
+.ratedpg:hover {
+  background: linear-gradient(to right, #00BCD4, #3F51B5);
+}
+.ratedpg13:hover {
+  background: linear-gradient(to right, #319628, #aeb71d);
+}
+.ratedr:hover {
+  background: linear-gradient(to right, #fffe00, #ff8100);
+  color: black;
+}
+.ratedextreme:hover {
+  background: linear-gradient(to right, #7e0000, #ff0000);
+}
+
+.allMoviesSelected {
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+}
+.ratedpgSelected {
+  background: linear-gradient(to right, #00BCD4, #3F51B5);
+}
+.ratedpg13Selected {
+  background: linear-gradient(to right, #319628, #aeb71d);
+}
+.ratedrSelected {
+  background: linear-gradient(to right, #fffe00, #ff8100);
+  color: black;
+}
+.ratedextremeSelected {
+  background: linear-gradient(to right, #7e0000, #ff0000);
+}
+
+
 /*selected class*/
 
 .selected{
@@ -86,4 +138,12 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 
 .form-control {
   border-radius: 20px;
+  color: white !important;
+  background-color:#232526 ;
+  border-style: white 1px solid !important;
+}
+
+.form-control:focus {
+  border-color: transparent;
+  box-shadow: transparent !important; 
 }
