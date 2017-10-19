@@ -82,7 +82,9 @@ class Main extends Component {
         }
 
         <DescriptionModal movie={this.state.modal} show={this.state.show} hide={this.close}/>
-
+        <div className='loadMore'>
+          <button onClick={this.props.loadMore}>Load More</button>
+        </div>
       </div>
 
       </div>)
