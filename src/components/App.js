@@ -148,7 +148,7 @@ class App extends Component {
     return (
       <Grid className='fluid background'>
         <Row className='grid'>
-          <Col className='sideBar' xs={6} md={4}>
+          <Col className='sideBar' xs={12} md={4}>
             <Sidebar
               people={this.state.filters.people}
               onSubmit={this.updateFilterPeople}
@@ -165,7 +165,7 @@ class App extends Component {
               resetData={this.getReset}
             />
           </Col>
-          <Col className='main' xs={6} md={8}>
+          <Col className="main" xs={12} md={8}>
             <SortButton sortItems={this.updateFilterSort} />
             <Main
               allMovies={this.state.movies}
