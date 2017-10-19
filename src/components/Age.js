@@ -14,14 +14,6 @@ class Age extends Component {
     let newClassName = `age-btn ${uniqueClassName} ${uniqueClassName}Selected sel`
     console.log(newClassName)
     event.target.className = newClassName
-    
-    /*if (!this.props.genreValue.includes(event.target.id)) {
-      this.props.genreAdd(event.target.id)
-      event.target.className = 'selected genre-btn'
-    } else {
-      this.props.genreDelete(event.target.id)
-      event.target.className = 'genre-btn'
-    }*/
   }
   deselectEverything () {
     let selectedElement = document.getElementsByClassName('sel')
@@ -34,22 +26,24 @@ class Age extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    /*if (!nextProps.genreValue.length) {
-      let selected = document.getElementsByClassName('selected')
+    console.log('nextprops', nextProps)
+    if (!nextProps.ageValue) {
+      let selected = document.getElementsByClassName('sel')
       if (selected.length) {
         this.deselectEverything()
+        document.getElementById('allMovies').className = 'age-btn allMovies allMoviesSelected sel'
       }
-    }*/
+    }
   }
 
   render () {
     return (
       <div className='age'>
-        <button name='allMovies' className='age-btn allMovies' value='' onClick={this.handleClick}>All Movies</button>
-        <button name='ratedpg' className='age-btn ratedpg' value='PG' onClick={this.handleClick}>PG-10</button>
-        <button name='ratedpg13' className='age-btn ratedpg13' value='PG-13' onClick={this.handleClick}>PG-13</button>
-        <button name='ratedr' className='age-btn ratedr' value='R' onClick={this.handleClick}>+18</button>
-        <button name='ratedextreme' className='age-btn ratedextreme' value='NC-17' onClick={this.handleClick}>Extreme</button>
+        <button id='allMovies' className='age-btn allMovies allMoviesSelected sel' value='' onClick={this.handleClick}>All Movies</button>
+        <button id='ratedpg' className='age-btn ratedpg' value='PG' onClick={this.handleClick}>PG-10</button>
+        <button id='ratedpg13' className='age-btn ratedpg13' value='PG-13' onClick={this.handleClick}>PG-13</button>
+        <button id='ratedr' className='age-btn ratedr' value='R' onClick={this.handleClick}>+18</button>
+        <button id='ratedextreme' className='age-btn ratedextreme' value='NC-17' onClick={this.handleClick}>Extreme</button>
       </div>
     )
   }

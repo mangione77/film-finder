@@ -152,7 +152,7 @@ class App extends Component {
               people={this.state.filters.people}
               onSubmit={this.updateFilterPeople}
               onDelete={this.deleteFilterPeople}
-              age={this.state.filters.age}
+              ageValue={this.state.filters.age}
               onAgeClick={this.updateFilterAge}
               data={this.state.filters.date}
               currentValue={this.updateFilterDate}
