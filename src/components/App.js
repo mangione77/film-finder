@@ -33,10 +33,12 @@ class App extends Component {
     this.updateFilterSort = this.updateFilterSort.bind(this)
     this.deleteFilterGenre = this.deleteFilterGenre.bind(this)
     this.clearFilterGenre = this.clearFilterGenre.bind(this)
+    this.getNextPage = this.getNextPage.bind(this)
   }
 
   updateFilterState (filter, value) {
     let filters = Object.assign({}, this.state.filters)
+    filters.page = 1
     filters[filter] = value
     this.setState({filters}, this.getFilteredMovies)
   }
@@ -94,7 +96,6 @@ class App extends Component {
   }
 
   updateFilterSort (value) {
-    console.log(value)
     this.updateFilterState('sort', value)
   }
 
@@ -108,17 +109,29 @@ class App extends Component {
         sort: 'popularity.desc',
         page: 1
       }
-    })
+    }, this.getFilteredMovies)
   }
 
   /* GET FILTERED MOVIES */
   getFilteredMovies () {
     var moviesUrl = generateUrl(this.state.filters)
     sendData(moviesUrl).then(data => {
+      let valueToSet
+      if (this.state.filters.page > 1) {
+        valueToSet = [...this.state.movies, ...data.data.results]
+      } else {
+        valueToSet = data.data.results
+      }
+      console.log(valueToSet)
       this.setState({
-        movies: data.data.results
+        movies: valueToSet
       })
     })
+  }
+
+  /* PAGINATION */
+  getNextPage () {
+    this.updateFilterState('page', ++this.state.filters.page)
   }
 
   /* COMPONENT METHODS */
@@ -126,7 +139,7 @@ class App extends Component {
     this.getFilteredMovies()
   }
   componentDidUpdate () {
-    console.log('update', this.state)
+    // console.log('update', this.state)
   }
 
   render () {
@@ -152,7 +165,9 @@ class App extends Component {
           </Col>
           <Col className="main" xs={12} md={8}>
             <SortButton sortItems={this.updateFilterSort} />
-            <Main allMovies={this.state.movies} />
+            <Main
+              allMovies={this.state.movies}
+              loadMore={this.getNextPage} />
           </Col>
         </Row>
       </Grid>

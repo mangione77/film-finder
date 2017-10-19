@@ -10,10 +10,22 @@ class Genres extends Component {
   handleClick (event) {
     if (!this.props.genreValue.includes(event.target.id)) {
       this.props.genreAdd(event.target.id)
-      event.target.className = 'genre-btn selected'
+      event.target.className = 'selected genre-btn'
     } else {
       this.props.genreDelete(event.target.id)
       event.target.className = 'genre-btn'
+    }
+  }
+  componentWillReceiveProps (nextProps) {
+    if (!nextProps.genreValue.length) {
+      let selected = document.getElementsByClassName('selected')
+      if (selected.length) {
+        let selectedElement = selected
+        while (selectedElement.length) {
+          selectedElement[0].className = 'genre-btn'
+          selectedElement = document.getElementsByClassName('selected')
+        }
+      }
     }
   }
 
