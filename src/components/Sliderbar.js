@@ -7,7 +7,7 @@ import Slider from 'rc-slider';
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
-const wrapperStyle = { width: 200, margin: 50 };
+const wrapperStyle = { width: 200, margin: 20 };
 
 const newDate = new Date();
 const currentYear = newDate.getFullYear();

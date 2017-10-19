@@ -50,7 +50,6 @@ class Genres extends Component {
         <button className='genre-btn' name='thriller' id='53' onClick={this.handleClick}>Thriller</button>
         <button className='genre-btn' name='war' id='10752' onClick={this.handleClick}>War</button>
         <button className='genre-btn' name='western' id='37' onClick={this.handleClick}>Western</button>
-        <button className='genre-btn' name='confirm' id='confirm' onClick={this.props.genreClear}>Clear!</button>
       </div>
     )
   }

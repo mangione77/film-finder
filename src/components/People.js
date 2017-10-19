@@ -36,7 +36,6 @@ class People extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId='formBasicText'>
-            <ControlLabel>Actor / Director:</ControlLabel>
             <FormControl
               type='text'
               value={this.state.value}
