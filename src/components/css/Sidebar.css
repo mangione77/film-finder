@@ -13,7 +13,7 @@ div.sideBar{
 }
 
 .fix-sidebar{
-    overflow: scroll;
+    overflow: auto;
     height: calc(100% - 20px);
   }
 
@@ -32,8 +32,6 @@ div.sideBar{
 /*genre buttons*/
 
 .genres-group{
-  height: 450px;
-  overflow-y: auto;
   margin:20px auto;
   padding: 0px auto;
 }
@@ -117,8 +115,6 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 @media (max-width: 1646px) {
 
   .genres-group{
-    height: 700px;
-    overflow: scroll;
     margin:20px auto 0px;
     padding: 0px auto;
   }
@@ -136,7 +132,6 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   }
 
   .fix-sidebar{
-    overflow: scroll;
     height: calc(100% - 20px);
   }
 
@@ -168,9 +163,6 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   .genre-btn{
   width: calc(100% - 10px);
  }
- .genres-group{
-  height: 1200px;
-  }
 }
 
 @media (max-width: 1000px) {
