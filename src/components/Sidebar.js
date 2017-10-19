@@ -7,6 +7,7 @@ import Age from './Age'
 import { ResetButton } from './ResetButton'
 import photoUrl from './Logo.svg'
 import './css/Sidebar.css'
+import Moviebutton from './Moviebutton'
 
 export const Sidebar = (props) => {
   return (
