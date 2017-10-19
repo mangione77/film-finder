@@ -1,9 +1,36 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export const Main = props => (
-  <div id='image-container'>
-    {
-      props.allMovies.map((movie, id) => {
+class Main extends Component {
+  constructor () {
+    super()
+    this.handleScroll = this.handleScroll.bind(this)
+    this.last = 0
+  }
+  handleScroll () {
+    let element = document.getElementById('image-container')
+    let elementHeight = element.scrollHeight - element.clientHeight
+    if (element.scrollTop <= elementHeight && element.scrollTop >= (elementHeight - 200)) {
+      if (this.last > (element.scrollTop + 100) || this.last < (element.scrollTop - 200)) {
+        this.last = element.scrollTop
+        this.props.loadMore()
+      }
+
+    }
+    console.log(element.scrollTop, elementHeight)
+  }
+
+  componentDidMount () {
+    console.log('image-container', document.getElementById('image-container'))
+    document.getElementById('image-container').addEventListener('scroll', this.handleScroll)
+  }
+  componentWillUnmount () {
+    document.getElementById('image-container').removeEventListener('scroll', this.handleScroll)
+  }
+  render () {
+    return (
+      <div id='image-container'>
+        {
+          this.props.allMovies.map((movie, id) => {
         return (
         
         <div className="page-post-button page-post">
@@ -30,8 +57,12 @@ export const Main = props => (
 
               
         )
-      })
-    }
-    <button onClick={props.loadMore}>Load More results</button>
-  </div>
-)
+          })
+        }
+        <button onClick={this.props.loadMore}>Load More results</button>
+      </div>
+    )
+  }
+}
+
+export default Main
