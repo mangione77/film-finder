@@ -1,4 +1,4 @@
-// import { Grid, Row, Col } from 'react-bootstrap'
+import { Grid, Row, Col } from 'react-bootstrap'
 import React from 'react'
 import Genres from './Genres'
 import People from './People'
