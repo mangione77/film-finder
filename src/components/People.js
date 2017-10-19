@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ListGroup, FormControl, FormGroup, ControlLabel} from 'react-bootstrap'
+import {ListGroup, FormControl, FormGroup} from 'react-bootstrap'
 // import PeopleInput from './PeopleInput'
 
 class People extends Component {
@@ -48,7 +48,7 @@ class People extends Component {
           <ListGroup componentClass='ul'>
             {
               this.props.people.map((item, i) => (
-                <div>{item.name} <span id={i} onClick={this.handleClick}>x</span></div>
+                <div className='persons'>{item.name} <span id={i} onClick={this.handleClick}><button className='close'><span className='actorsClose'>x</span></button></span></div>
               ))
             }
           </ListGroup>

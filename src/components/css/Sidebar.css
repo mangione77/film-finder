@@ -6,6 +6,7 @@
   position: fixed;
   height: 100%;
   color: white;
+  padding: 0 !important;
 }
 
 div.sideBar{
@@ -13,7 +14,8 @@ div.sideBar{
 }
 
 .fix-sidebar{
-    overflow: scroll;
+    padding: 10px;
+    overflow: auto;
     height: calc(100% - 20px);
   }
 
@@ -32,9 +34,6 @@ div.sideBar{
 /*genre buttons*/
 
 .genres-group{
-  height: 450px;
-  overflow: scroll;
-  overflow-x: hidden;
   margin:20px auto;
   padding: 0px auto;
 }
@@ -118,8 +117,6 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 @media (max-width: 1646px) {
 
   .genres-group{
-    height: 700px;
-    overflow: scroll;
     margin:20px auto 0px;
     padding: 0px auto;
   }
@@ -169,18 +166,14 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   .genre-btn{
   width: calc(100% - 10px);
  }
- .genres-group{
-  height: 1200px;
-  }
 }
 
 @media (max-width: 1000px) {
  .sideBar {
   background: linear-gradient(to bottom , #232526, #414345);
-  position: absolute;
   height: 100%;
   color: white;
-  width: 100%;
+  width: 345px;
   z-index: 100;
   }
 }
@@ -197,6 +190,23 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 .form-control:focus {
   border-color: transparent;
   box-shadow: transparent !important; 
+}
+
+.actorsClose{
+  color: white;
+}
+.persons{
+  background-color: #232526;
+  line-height: 10px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  position: relative;
+  border-radius: 20px;
+}
+.persons button {
+  position: absolute;
+  top: 2px;
+  right: 20px;
 }
 
 

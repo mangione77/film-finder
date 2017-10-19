@@ -62,8 +62,9 @@ class Main extends Component {
   render () {
     return (
       <div>
-        <SortButton sortItems={this.props.sortItems} />
+        
       <div id='image-container'>
+        <SortButton sortItems={this.props.sortItems} />
         {
           this.props.allMovies.map((movie, id) => {
 

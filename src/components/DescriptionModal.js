@@ -41,10 +41,6 @@ class DescriptionModal extends Component {
   render () {
     return (
       <ButtonToolbar>
-        <Button bsStyle="primary" onClick={this.showModal}>
-          Launch demo modal
-        </Button>
-
         <Modal
           {...this.props}
           show={this.state.show}
