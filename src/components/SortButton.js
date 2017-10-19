@@ -39,7 +39,7 @@ class SortButton extends Component {
 
   render() {
     return (
-      <div id="dropdown">
+      <div>
         <DropdownButton id="drop" title="Sort!">
           <MenuItem onClick={ this.handleClickVoteUp } >Vote Average &uarr;</MenuItem>
           <MenuItem onClick={ this.handleClickVoteDown } >Vote Average &darr;</MenuItem>

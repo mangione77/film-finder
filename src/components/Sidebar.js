@@ -9,7 +9,7 @@ import photoUrl from './Logo.svg'
 
 export const Sidebar = (props) => {
   return (
-    <div>
+    <div className="fix-sidebar">
       <div className='logo-container'>
         <img id='logo' src={photoUrl} alt='Logo' />
       </div>
