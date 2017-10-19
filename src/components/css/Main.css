@@ -33,11 +33,39 @@
   height: 100%;
 }
 
-@media (min-width: 767px) {
-  .images {
-  height: 285px;
-  }  
+
+@media (max-width: 1920px){
+
+  .page-post{
+  display: flex;
+  display: inline-block;
+  position: relative;
+  width: 20%;
+  z-index: 0;
+  cursor: pointer;
+
+ }
+ .images {
+  display:flex;
+  display:inline-block;
+  width: 100%;
+  height: 100%;
 }
+
+}
+/*
+@media (max-width: 400px) {
+ 
+  .page-post{
+    display: flex;
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    z-index: 0;
+    cursor: pointer;
+
+  }
+}*/
 
 .page-post{
   display: flex;
@@ -113,8 +141,9 @@
 }
 
 .btn-default:hover {
-  background-color: #101111; 
-  border-style: none; 
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+  border-style: white 1px solid; 
+  color: white;
 }
 .btn-default.focus, .btn-default:focus {
   background-color: #0049ff; 
