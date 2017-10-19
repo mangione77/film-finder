@@ -12,6 +12,11 @@ div.sideBar{
   padding: 25px; 
 }
 
+.fix-sidebar{
+    overflow: scroll;
+    height: calc(100% - 20px);
+  }
+
 /*logo*/
 
 #logo {
@@ -136,16 +141,7 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   }
 
   .age-btn{
-  border: none;
-  font-family: Helvetica;
-  color: white;
-  background-color: #414345;
-  padding: 10px;
-  width: calc(20% - 10px);
   height: 67.1px;
-  border-radius: 8px;
-  margin: 0 5px;
-  
   } 
 
   .age{
@@ -157,20 +153,37 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1332px) {
   .age-btn{
-  border: none;
-  font-family: Helvetica;
-  color: white;
-  background-color: #414345;
-  padding: 10px;
-  width: calc(100% - 10px);
-  height: 67.1px;
-  border-radius: 8px;
-  margin: 0 5px;
-  
+  width: calc(100% - 10px) !important; 
+  margin: 7px;
+  height: 45px;
   } 
+  .age{
+  display: block;
+  }
 }
+
+@media (max-width: 1202px) {
+  .genre-btn{
+  width: calc(100% - 10px);
+ }
+ .genres-group{
+  height: 1200px;
+  }
+}
+
+@media (max-width: 1000px) {
+ .sideBar {
+  background: linear-gradient(to bottom , #232526, #414345);
+  position: absolute;
+  height: 100%;
+  color: white;
+  width: 100%;
+  z-index: 100;
+  }
+}
+
 /*actors input*/
 
 .form-control {

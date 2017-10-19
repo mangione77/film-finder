@@ -29,6 +29,7 @@
   height: 100%;
 }
 
+/*medias */
 
 @media (max-width: 1920px){
 
@@ -49,19 +50,6 @@
 }
 
 }
-/*
-@media (max-width: 400px) {
- 
-  .page-post{
-    display: flex;
-    display: inline-block;
-    position: relative;
-    width: 50%;
-    z-index: 0;
-    cursor: pointer;
-
-  }
-}*/
 
 .page-post{
   display: flex;
