@@ -28,8 +28,7 @@ div.sideBar{
 
 .genres-group{
   height: 450px;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow-y: auto;
   margin:20px auto;
   padding: 0px auto;
 }
@@ -184,6 +183,23 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 .form-control:focus {
   border-color: transparent;
   box-shadow: transparent !important; 
+}
+
+.actorsClose{
+  color: white;
+}
+.persons{
+  background-color: #232526;
+  line-height: 10px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  position: relative;
+  border-radius: 20px;
+}
+.persons button {
+  position: absolute;
+  top: 2px;
+  right: 20px;
 }
 
 
