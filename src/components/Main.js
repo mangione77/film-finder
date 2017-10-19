@@ -15,11 +15,10 @@ class Main extends Component {
         this.props.loadMore()
       }
     }
-    console.log(element.scrollTop, elementHeight)
+    // console.log(element.scrollTop, elementHeight)
   }
 
   componentDidMount () {
-    console.log('image-container', document.getElementById('image-container'))
     document.getElementById('image-container').addEventListener('scroll', this.handleScroll)
   }
   componentWillUnmount () {
