@@ -52,22 +52,28 @@ div.sideBar{
 background: linear-gradient(to right, #7f00ff, #e100ff);
 }
 
- /* age buttons */
+ /* age */
+.age{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
 .age-btn{
   border: none;
-  margin: 7px;
-  border-radius: 8px;
   font-family: Helvetica;
   color: white;
   background-color: #414345;
   padding: 10px;
+  width: calc(20% - 10px);
+  border-radius: 8px;
+  margin: 0 5px;
 }
 
 .allMovies:hover {
   background: linear-gradient(to right, #7f00ff, #e100ff);
 }
 .ratedpg:hover {
-  background: linear-gradient(to right, #3F51B5, #00BCD4);
+  background: linear-gradient(to right, #00BCD4, #3F51B5);
 }
 .ratedpg13:hover {
   background: linear-gradient(to right, #319628, #aeb71d);
@@ -77,6 +83,23 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   color: black;
 }
 .ratedextreme:hover {
+  background: linear-gradient(to right, #7e0000, #ff0000);
+}
+
+.allMoviesSelected {
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+}
+.ratedpgSelected {
+  background: linear-gradient(to right, #00BCD4, #3F51B5);
+}
+.ratedpg13Selected {
+  background: linear-gradient(to right, #319628, #aeb71d);
+}
+.ratedrSelected {
+  background: linear-gradient(to right, #fffe00, #ff8100);
+  color: black;
+}
+.ratedextremeSelected {
   background: linear-gradient(to right, #7e0000, #ff0000);
 }
 
