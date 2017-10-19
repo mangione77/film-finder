@@ -32,7 +32,7 @@ div.fluid.container {
   height: 100%;
   display: flex;
   justify-content: center;
-  background: url(../textures/black-back.jpg);
+  background: url(../../textures/black-back.jpg);
   float: right;
 
 }
