@@ -58,6 +58,7 @@
   }
   .main{
     width: calc(100% - 345px);
+    display: block;
   }
   
 }
