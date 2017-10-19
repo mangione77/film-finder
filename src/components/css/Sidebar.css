@@ -42,7 +42,7 @@ div.sideBar{
   border-radius: 30px;
   font-family: Helvetica;
   color: white;
-  background-color: #323335;
+  background-color: #3B3C3E;
   border: none;
   width:30%;
   height:50px;
@@ -146,4 +146,40 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 .form-control:focus {
   border-color: transparent;
   box-shadow: transparent !important; 
+}
+
+
+/*slider*/
+
+.sliderbar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.rc-slider-rail {
+  background-color: #7f00ff;
+}
+
+.rc-slider-track {
+  background-color: #e100ff;
+}
+
+.rc-slider-handle {
+  background-color: white;
+  border-color: white;
+}
+
+/*reset button*/
+
+.reset-button {
+  border-radius: 10px;
+  background-color:#232526 ;
+  color: white;
+  border-style: none;
+  width: 100px;
+  text-align: center;
+}
+
+.resetButton-container {
+  text-align: center;
 }

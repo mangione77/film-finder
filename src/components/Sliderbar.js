@@ -13,7 +13,7 @@ const newDate = new Date();
 const currentYear = newDate.getFullYear();
 
 export const Sliderbar = props => (
-  <div>
+  <div className="sliderbar-container">
     <div style={wrapperStyle}>
       <Range min={1895} max={2017} allowCross={false} onAfterChange= {props.currentValue} defaultValue={[1895, currentYear]} tipFormatter={value => `${value}`} />
     </div>
