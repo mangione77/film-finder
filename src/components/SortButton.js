@@ -1,6 +1,7 @@
 import React, {Component}  from 'react'
 import {MenuItem, DropdownButton} from 'react-bootstrap'
-
+import './css/Main.css'
+import photoTitle from './img-title.svg'
 
 class SortButton extends Component {
   constructor() {
@@ -39,7 +40,8 @@ class SortButton extends Component {
 
   render() {
     return (
-      <div>
+      <div id="sort-bar">
+        <img className="page-title" src={photoTitle} alt="title"/>  
         <DropdownButton id="drop" title="Sort!">
           <MenuItem onClick={ this.handleClickVoteUp } >Vote Average &uarr;</MenuItem>
           <MenuItem onClick={ this.handleClickVoteDown } >Vote Average &darr;</MenuItem>

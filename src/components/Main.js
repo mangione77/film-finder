@@ -43,9 +43,9 @@ class Main extends Component {
             )
           })
         }
-      {/*  <div>
-          <button onClick={this.props.loadMore}>Load More results</button>
-        </div>*/}
+      <div>
+        <button onClick={this.props.loadMore}>Load More results</button>
+      </div>
       </div>
       </div>
     )
