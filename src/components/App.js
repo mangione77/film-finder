@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Main } from './Main'
+import Main from './Main'
 import {sendData, generateUrl, getPersonId} from './api'
 import { Sidebar } from './Sidebar'
 import './App.css'
@@ -121,6 +121,8 @@ class App extends Component {
         valueToSet = [...this.state.movies, ...data.data.results]
       } else {
         valueToSet = data.data.results
+        let element = document.getElementById('image-container')
+        element.scrollTop = 0
       }
       console.log(valueToSet)
       this.setState({
