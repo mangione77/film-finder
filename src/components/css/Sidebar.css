@@ -52,6 +52,35 @@ div.sideBar{
 background: linear-gradient(to right, #7f00ff, #e100ff);
 }
 
+ /* age buttons */
+.age-btn{
+  border: none;
+  margin: 7px;
+  border-radius: 8px;
+  font-family: Helvetica;
+  color: white;
+  background-color: #414345;
+  padding: 10px;
+}
+
+.allMovies:hover {
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+}
+.ratedpg:hover {
+  background: linear-gradient(to right, #3F51B5, #00BCD4);
+}
+.ratedpg13:hover {
+  background: linear-gradient(to right, #319628, #aeb71d);
+}
+.ratedr:hover {
+  background: linear-gradient(to right, #fffe00, #ff8100);
+  color: black;
+}
+.ratedextreme:hover {
+  background: linear-gradient(to right, #7e0000, #ff0000);
+}
+
+
 /*selected class*/
 
 .selected{
