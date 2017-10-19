@@ -4,7 +4,6 @@ import {sendData, generateUrl, getPersonId} from './api'
 import { Sidebar } from './Sidebar'
 import './App.css'
 import { Grid, Row, Col } from 'react-bootstrap'
-import SortButton from './SortButton'
 
 class App extends Component {
   constructor () {
@@ -164,7 +163,6 @@ class App extends Component {
             />
           </Col>
           <Col className="main" xs={12} md={8}>
-            <SortButton sortItems={this.updateFilterSort} />
             <Main
               allMovies={this.state.movies}
               loadMore={this.getNextPage} />

@@ -1,7 +1,9 @@
 import React from 'react'
+import SortButton from './SortButton'
 
 export const Main = props => (
   <div id='image-container'>
+    <SortButton sortItems={this.updateFilterSort} />
     {
       props.allMovies.map((movie, id) => {
         return (

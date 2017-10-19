@@ -61,8 +61,8 @@ div.sideBar{
 
 #image-container{
   margin-top: 80px;
-  height: 750px;
-  width: 990px;
+  height: 100%;
+  width: 100%;
   overflow: scroll;
   overflow-x: hidden;
   display: flex;
@@ -129,7 +129,7 @@ div.sideBar{
 }
 
 .genre-btn{
-  margin: 6px;
+  margin: 7px;
   margin-top: 8px;
   border-radius: 30px;
   font-family: Helvetica;
@@ -148,7 +148,6 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 /* Dropdpwn button */
 
 #dropdown{
-  display: block;
   height: 50px;
 }
 
