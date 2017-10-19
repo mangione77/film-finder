@@ -115,13 +115,21 @@
   height: 110px;
 }
 
+#sort-bar button {
+  color: white;
+}
+
+.open{
+  border: 1px solid white;
+  border-radius: 4px; 
+}
+
 .btn-group{
   margin-left: 55px;
 }
 
 .btn-default {
   background-color: transparent;
-  color: white;
   width: 100px;
 }
 
