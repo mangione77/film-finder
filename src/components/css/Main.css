@@ -16,10 +16,11 @@
   display: inline-block;
   z-index:10;
   position: fixed;
-  top: 110px;
+  top: 0;
   bottom: 0;
   left: 33.33%;
   right: 0;
+  padding-top: 110px;
 }
 
 .images {
@@ -105,9 +106,9 @@
   padding-bottom: 5px; 
   padding-top: 37px;
   top: 0;
-  left: 33.33%;
+  left: 0;
   right: 0;
-  position: fixed;
+  position: absolute;
   text-align: center;
   display: flex;
   display: inline-block;

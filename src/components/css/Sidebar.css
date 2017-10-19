@@ -6,6 +6,7 @@
   position: fixed;
   height: 100%;
   color: white;
+  padding: 0 !important;
 }
 
 div.sideBar{
@@ -13,6 +14,7 @@ div.sideBar{
 }
 
 .fix-sidebar{
+    padding: 10px;
     overflow: auto;
     height: calc(100% - 20px);
   }
