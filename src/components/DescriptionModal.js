@@ -23,17 +23,22 @@ class DescriptionModal extends Component {
 
   hideModal() {
     this.setState({show: false})
+    this.props.hide()
   }
-  componentWillUpdate () {
-  }
+
   componentWillReceiveProps (nextProps) {
     console.log(nextProps.show)
     this.setState({
       show: nextProps.show
     })
   }
+  componentWillUnmount () {
+    this.setState({
+      show: false
+    })
+  }
 
-  render() {
+  render () {
     return (
       <ButtonToolbar>
         <Button bsStyle="primary" onClick={this.showModal}>

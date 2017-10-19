@@ -62,8 +62,7 @@ class Main extends Component {
   render () {
     return (
       <div>
-
-    
+        <SortButton sortItems={this.props.sortItems} />
       <div id='image-container'>
         {
           this.props.allMovies.map((movie, id) => {
@@ -81,7 +80,7 @@ class Main extends Component {
           })
         }
 
-        <DescriptionModal movie={this.state.modal} show={this.state.show}/>
+        <DescriptionModal movie={this.state.modal} show={this.state.show} hide={this.close}/>
 
       </div>
 
