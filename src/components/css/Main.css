@@ -36,6 +36,7 @@
 .modal-photo {
   max-width:300px;
   max-height:300px;
+  margin-bottom: 10px;
 }
 
 
@@ -44,6 +45,13 @@
 }
 
 /*medias */
+
+@media (max-width: 978px) {
+  .description-row {
+  max-width:500px;
+  text-align: center;
+  }
+}
 
 @media (max-width: 1920px){
 
@@ -208,5 +216,6 @@
   color: white;
   border: none;
 }
+
 
 
