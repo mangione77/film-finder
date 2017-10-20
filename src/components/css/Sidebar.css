@@ -139,26 +139,49 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   }
 
   .age-btn{
-  height: 67.1px;
+    height: 67.1px;
   } 
 
   .age{
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
   }
 }
 
+
+/* toggle button */
+
+.menuToggle {
+  position: fixed;
+  top: 32.5px;
+  left: -40px;
+  height: 40px;
+  width: 40px;
+  z-index: 999;
+}
+
+.menuToggle img {
+  width: 40px;
+  height: 40px;
+}
+
+.overflowHidden{
+  overflow: hidden; 
+}
+
+/* media queries */
+
 @media (max-width: 1332px) {
   .age-btn{
-  width: calc(100% - 10px) !important; 
-  margin: 7px;
-  height: 45px;
+    width: calc(100% - 10px) !important; 
+    margin: 7px;
+    height: 45px;
   } 
   .age{
-  display: block;
+    display: block;
   }
 }
 
@@ -178,11 +201,39 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
  .sideBar {
     width: 100%;
-    position: relative;
+    position: fixed;
+    left: 0;
     height: auto;
+  }
+  .menuToggle {
+    left: 30px;
+  }
+  #filters {
+    display: none;
+  }
+  .fix-sidebar {
+    height: auto;
+  }
+  .sideBarOpen {
+    display: block !important;
+    position: inherit;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 100px);
+  }
+}
+
+@media (max-width: 374px) {
+  #logo {
+    position: fixed;
+    right: 0;
+    top: 18px;
+  }
+  .logo-container {
+    height: 87px;
   }
 }
 
