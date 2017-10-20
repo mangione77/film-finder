@@ -109,6 +109,11 @@ class App extends Component {
         page: 1
       }
     }, this.getFilteredMovies)
+    // console.log('class', document.getElementsByClassName('rc-slider-handle-1'))
+    // document.getElementsByClassName('rc-slider-handle-1')[0].style.left = '0%'
+    // document.getElementsByClassName('rc-slider-handle-2')[0].style.left = '100%'
+    // document.getElementsByClassName('rc-slider-track-1')[0].style.left = '0%'
+    // document.getElementsByClassName('rc-slider-track-1')[0].style.width = '100%'
   }
 
   /* GET FILTERED MOVIES */
