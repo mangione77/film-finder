@@ -263,6 +263,11 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   }
 }
 
+/* rc-slider */
+
+.rc-slider-tooltip {
+  z-index: 99999999;
+}
 /*actors input*/
 
 .form-control {
