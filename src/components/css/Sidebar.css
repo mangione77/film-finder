@@ -292,12 +292,13 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 /*reset button*/
 
 .reset-button {
-  border-radius: 10px;
+  border-radius: 20px;
   background-color:#232526 ;
   color: white;
   border-style: none;
-  width: 100px;
   text-align: center;
+  padding: 10px 20px;
+  margin: 20px 0;
 }
 
 .resetButton-container {
