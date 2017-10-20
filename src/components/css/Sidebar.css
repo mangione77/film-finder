@@ -318,6 +318,10 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   margin: 20px 0;
 }
 
+.reset-button:hover {
+  background: linear-gradient(to right, #0049ff, #009cff) ;
+}
+
 .resetButton-container {
   text-align: center;
 }
