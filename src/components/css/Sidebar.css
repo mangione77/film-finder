@@ -14,9 +14,8 @@ div.sideBar{
 }
 
 .fix-sidebar{
-    padding: 10px;
-    overflow: auto;
-    height: calc(100% - 20px);
+  overflow: auto;
+  height: calc(100% - 20px);
   }
 
 /*logo*/
@@ -29,6 +28,13 @@ div.sideBar{
 .logo-container {
   display: flex;
   justify-content: center;
+  padding: 10px;
+}
+
+/* filters */
+
+#filters {
+  padding: 10px;
 }
 
 /*genre buttons*/
@@ -105,12 +111,33 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   background: linear-gradient(to right, #7e0000, #ff0000);
 }
 
+/* people */
 
+#formBasicText {
+  margin: 10px;
+  width: calc(100% - 20px);
+}
+
+.persons{
+  width: calc(100% - 40px);
+  background-color: #323335;
+  line-height: 10px;
+  padding: 10px 15px;
+  margin: 10px 20px;
+  position: relative;
+  border-radius: 5px;
+}
+.persons button {
+  position: absolute;
+  top: 2px;
+  right: 15px;
+}
 /*selected class*/
 
 .selected{
   background: linear-gradient(to right, #0049ff, #009cff);
 }
+
 
 /*medias*/
 
@@ -187,8 +214,8 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 
 @media (max-width: 1202px) {
   .genre-btn{
-  width: calc(100% - 10px);
- }
+    width: calc(50% - 20px);
+  }
 }
 
 @media (max-width: 1000px) {
@@ -232,7 +259,7 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
     top: 18px;
   }
   .logo-container {
-    height: 87px;
+    height: 107px;
   }
 }
 
@@ -253,20 +280,6 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 .actorsClose{
   color: white;
 }
-.persons{
-  background-color: #323335;
-  line-height: 10px;
-  padding: 10px 15px;
-  margin: 10px 0;
-  position: relative;
-  border-radius: 5px;
-}
-.persons button {
-  position: absolute;
-  top: 2px;
-  right: 15px;
-}
-
 
 /*slider*/
 
