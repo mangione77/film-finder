@@ -62,7 +62,6 @@ class Main extends Component {
   render () {
     return (
       <div>
-        
       <div id='image-container'>
         <SortButton sortItems={this.props.sortItems} />
         {
