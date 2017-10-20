@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import { Button, Modal } from 'react-bootstrap'
 import DescriptionModal from './DescriptionModal'
 
+
 class Main extends Component {
   constructor (props) {
     super(props)
@@ -11,11 +12,12 @@ class Main extends Component {
     this.open = this.open.bind(this)
     this.close = this.close.bind(this)
     this.last = 0
+    this.entered = false
     this.state = {
       show:false,
       modal:{}
-          }
     }
+  }
   
   // modal
 
@@ -39,13 +41,17 @@ class Main extends Component {
   handleScroll () {
     let element = document.getElementById('image-container')
     let elementHeight = element.scrollHeight - element.clientHeight
-    if (element.scrollTop <= elementHeight && element.scrollTop >= (elementHeight - 200)) {
+    if(elementHeight < 200 && !this.entered){
+      this.last = element.scrollTop
+      this.props.loadMore()
+      this.entered = true;
+    } else if (element.scrollTop <= elementHeight && element.scrollTop >= (elementHeight - 200)) {
       if (this.last > (element.scrollTop + 100) || this.last < (element.scrollTop - 200)) {
         this.last = element.scrollTop
         this.props.loadMore()
       }
     }
-    // console.log(element.scrollTop, elementHeight)
+    // console.log(element.scrollTop, elementHeight, this.last)
   }
 
   componentDidMount () {
@@ -56,9 +62,13 @@ class Main extends Component {
   }
 
   componentDidUpdate() {
-    //console.log(this.props)
   }
+  componentWillReceiveProps (newProps) {
+    if (newProps.allMovies.length <= 20) {
+      this.entered = false
+    }
 
+  }
   render () {
     return (
       <div>
