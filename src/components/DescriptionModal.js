@@ -53,12 +53,12 @@ class DescriptionModal extends Component {
             <Modal.Title id="contained-modal-title-lg">{this.props.movie.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          <Grid>
+          <Grid className="modal-align">
           <Row className="description-row">
-          <Col xs={6} md={6} lg={6}>
+          <Col xs={12} md={6} lg={6}>
             <img src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} className="modal-photo" />
           </Col>
-          <Col xs={6} md={6} lg={6}>  
+          <Col xs={12} md={6} lg={6}>  
             <p className="modal-movie-overview">{this.props.movie.overview}</p>
             <p><strong>Vote Average:</strong>{this.props.movie.vote_average}</p>
             <p><strong>Release Date:</strong>{this.props.movie.release_date}</p>
