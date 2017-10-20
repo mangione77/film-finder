@@ -95,7 +95,7 @@
   padding: 15px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 374px) {
   .page-post{
     width: 100% !important;
   }
