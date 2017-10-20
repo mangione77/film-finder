@@ -1,7 +1,7 @@
 /* general */
 
 .sideBar {
-  background: linear-gradient(to bottom , #232526, #414345, #232526 );
+  background: linear-gradient(to bottom , #232526, #414244);
   float: left;
   position: fixed;
   height: 100%;
@@ -44,7 +44,7 @@ div.sideBar{
   border-radius: 30px;
   font-family: Helvetica;
   color: white;
-  background-color: #414345;
+  background-color: #414244;
   border: none;
   width:30%;
   height:50px;
