@@ -151,7 +151,7 @@
 }
 
 .btn-group{
-  margin: 0 25px;
+  margin: 5px 25px;
 }
 
 .btn-default {
@@ -180,7 +180,7 @@
 .page-title {
   max-width: 400px;
   width: calc(100% - 50px);
-  margin: 0 25px;
+  margin: 5px 25px;
 }
 
 .loadMore {
