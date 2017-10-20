@@ -1,7 +1,7 @@
 /* general */
 
 .sideBar {
-  background: linear-gradient(to bottom , #232526, #414244);
+  background: linear-gradient(to bottom , #101111, #323335);
   float: left;
   position: fixed;
   height: 100%;
@@ -64,7 +64,7 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   border: none;
   font-family: Helvetica;
   color: white;
-  background-color: #414345;
+  background-color: #323335;
   padding: 10px;
   width: calc(20% - 10px);
   border-radius: 8px;
@@ -139,26 +139,49 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   }
 
   .age-btn{
-  height: 67.1px;
+    height: 67.1px;
   } 
 
   .age{
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
   }
 }
 
+
+/* toggle button */
+
+.menuToggle {
+  position: fixed;
+  top: 32.5px;
+  left: -40px;
+  height: 40px;
+  width: 40px;
+  z-index: 999;
+}
+
+.menuToggle img {
+  width: 40px;
+  height: 40px;
+}
+
+.overflowHidden{
+  overflow: hidden; 
+}
+
+/* media queries */
+
 @media (max-width: 1332px) {
   .age-btn{
-  width: calc(100% - 10px) !important; 
-  margin: 7px;
-  height: 45px;
+    width: calc(100% - 10px) !important; 
+    margin: 7px;
+    height: 45px;
   } 
   .age{
-  display: block;
+    display: block;
   }
 }
 
@@ -170,7 +193,6 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 
 @media (max-width: 1000px) {
  .sideBar {
-  background: linear-gradient(to bottom , #232526, #414345);
   height: 100%;
   color: white;
   width: 345px;
@@ -178,11 +200,39 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
  .sideBar {
     width: 100%;
-    position: relative;
+    position: fixed;
+    left: 0;
     height: auto;
+  }
+  .menuToggle {
+    left: 30px;
+  }
+  #filters {
+    display: none;
+  }
+  .fix-sidebar {
+    height: auto;
+  }
+  .sideBarOpen {
+    display: block !important;
+    position: inherit;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 100px);
+  }
+}
+
+@media (max-width: 374px) {
+  #logo {
+    position: fixed;
+    right: 0;
+    top: 18px;
+  }
+  .logo-container {
+    height: 87px;
   }
 }
 
@@ -204,17 +254,17 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
   color: white;
 }
 .persons{
-  background-color: #232526;
+  background-color: #323335;
   line-height: 10px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   margin: 10px 0;
   position: relative;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 .persons button {
   position: absolute;
   top: 2px;
-  right: 20px;
+  right: 15px;
 }
 
 
@@ -241,12 +291,13 @@ background: linear-gradient(to right, #7f00ff, #e100ff);
 /*reset button*/
 
 .reset-button {
-  border-radius: 10px;
+  border-radius: 20px;
   background-color:#232526 ;
   color: white;
   border-style: none;
-  width: 100px;
   text-align: center;
+  padding: 10px 20px;
+  margin: 20px 0;
 }
 
 .resetButton-container {
