@@ -31,6 +31,18 @@
   height: 100%;
 }
 
+/*Modal*/
+
+.modal-photo {
+  max-width:300px;
+  max-height:300px;
+}
+
+
+.description-row {
+  max-width:500px;
+}
+
 /*medias */
 
 @media (max-width: 1920px){
@@ -196,3 +208,5 @@
   color: white;
   border: none;
 }
+
+
