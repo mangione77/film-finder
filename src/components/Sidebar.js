@@ -7,7 +7,6 @@ import Age from './Age'
 import { ResetButton } from './ResetButton'
 import photoUrl from './Logo.svg'
 import './css/Sidebar.css'
-import Moviebutton from './Moviebutton'
 import menuToggle from '../img/hamburger.png'
 
 const mobileMenu = (e) => {
@@ -45,7 +44,7 @@ export const Sidebar = (props) => {
         />
         <h4 className='slidebar-title'>Release year</h4>
         <Sliderbar
-          data={props.data}
+          date={props.date}
           currentValue={props.currentValue}
           defaultValue={props.defaultValue}
         />

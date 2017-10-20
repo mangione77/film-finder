@@ -9,7 +9,7 @@ export function sendData (url) {
 }
 
 export function generateUrl (state) {
-  console.log('recieved by api', state)
+  // console.log('recieved by api', state)
   let url = discoverUrl
 
   /* PEOPLE */
@@ -24,7 +24,6 @@ export function generateUrl (state) {
   })
 
   /* AGE */
-  // console.log(state.age)
   url += `&certification_country=US&certification=${state.age}`
 
   /* DATE */
@@ -46,7 +45,7 @@ export function generateUrl (state) {
   /* API KEY */
   url += addApiKey()
 
-  console.log(url)
+  // console.log(url)
   return url
 }
 

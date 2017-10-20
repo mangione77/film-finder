@@ -60,7 +60,7 @@ class App extends Component {
           }
         }
         // update state
-        console.log(this.state.filters.people)
+        // console.log(this.state.filters.people)
         this.updateFilterState('people', [...this.state.filters.people, person])
       })
     }
@@ -128,7 +128,6 @@ class App extends Component {
         let element = document.getElementById('image-container')
         element.scrollTop = 0
       }
-      console.log(valueToSet)
       this.setState({
         movies: valueToSet
       })
@@ -159,7 +158,7 @@ class App extends Component {
               onDelete={this.deleteFilterPeople}
               ageValue={this.state.filters.age}
               onAgeClick={this.updateFilterAge}
-              data={this.state.filters.date}
+              date={this.state.filters.date}
               currentValue={this.updateFilterDate}
               defaultValue={[1895, this.currentYear]}
               genreValue={this.state.filters.genres}

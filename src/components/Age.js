@@ -12,7 +12,6 @@ class Age extends Component {
     this.props.onAgeClick(event.target.value)
     let uniqueClassName = event.target.className.replace('age-btn', '').trim()
     let newClassName = `age-btn ${uniqueClassName} ${uniqueClassName}Selected sel`
-    console.log(newClassName)
     event.target.className = newClassName
   }
   deselectEverything () {
@@ -20,13 +19,11 @@ class Age extends Component {
     while (selectedElement.length) {
       let splitClass = selectedElement[0].className.split(' ')
       selectedElement[0].className = splitClass[0] + ' ' + splitClass[1]
-      // console.log(selectedElement[0].className)
       selectedElement = document.getElementsByClassName('sel')
     }
   }
 
   componentWillReceiveProps (nextProps) {
-    console.log('nextprops', nextProps)
     if (!nextProps.ageValue) {
       let selected = document.getElementsByClassName('sel')
       if (selected.length) {

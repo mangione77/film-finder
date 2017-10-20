@@ -11,7 +11,6 @@ class DescriptionModal extends Component {
     this.showModal = this.showModal.bind(this)
     this.hideModal = this.hideModal.bind(this)
     this.getInitialState = this.getInitialState.bind(this)
-
   }
   getInitialState () {
     return {show: false}
@@ -21,13 +20,12 @@ class DescriptionModal extends Component {
     this.setState({show: true})
   }
 
-  hideModal() {
+  hideModal () {
     this.setState({show: false})
     this.props.hide()
   }
 
   componentWillReceiveProps (nextProps) {
-    console.log(nextProps.show)
     this.setState({
       show: nextProps.show
     })
@@ -41,7 +39,6 @@ class DescriptionModal extends Component {
   render () {
     return (
       <ButtonToolbar>
-      
         <Modal
           {...this.props}
           show={this.state.show}
