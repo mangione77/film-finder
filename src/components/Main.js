@@ -28,7 +28,7 @@ class Main extends Component {
   }
 
   open = (movie) => {
-    console.log(movie)
+    // console.log(movie)
     this.setState({
       show: true,
       modal: movie,

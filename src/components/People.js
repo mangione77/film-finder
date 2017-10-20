@@ -28,7 +28,7 @@ class People extends Component {
 
   handleClick (e) {
     this.props.onDelete(e.target.id)
-    console.log(e.target.id)
+    // console.log(e.target.id)
   }
 
   render () {
